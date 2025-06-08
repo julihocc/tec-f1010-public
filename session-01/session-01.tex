@@ -14,20 +14,27 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 
-% Graphics
+% Graphics and diagrams
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{positioning,shapes,arrows,decorations.markings}
 
 % Additional packages
 \usepackage{booktabs}
 \usepackage{multicol}
 
+% Custom commands for academic style
+\newcommand{\highlight}[1]{\textcolor{mLightBrown}{\textbf{#1}}}
+\newcommand{\concept}[1]{\textcolor{mDarkTeal}{\textbf{#1}}}
+\newcommand{\formula}[1]{\textcolor{mLightBrown}{#1}}
+\newcommand{\emphasis}[1]{\textit{#1}}
+
 % Title information
 \title{F1010 - Modeling with Differential Equations}
-\subtitle{Session 1: Course Introduction}
-\author{Dr. Juliho Castillo\\julihocc@tec.mx}
-\institute{School of Engineering and Sciences\\Academic Department of Sciences}
-\date{\today}
+\subtitle{Session 1: Theoretical Foundations and Course Introduction}
+\author{Dr. Juliho David Castillo-Herrera\\\texttt{julihocc@tec.mx}}
+\institute{School of Engineering and Sciences\\Academic Department of Mathematical Sciences}
+\date{June 8, 2025}
 
 \begin{document}
 
@@ -39,156 +46,199 @@
     \tableofcontents
 \end{frame}
 
-\section{Welcome to F1010}
+\section{Course Overview and Academic Framework}
 
 \begin{frame}{Course Information}
+    \concept{Academic Course Details:}
     \begin{itemize}
-        \item \textbf{Course Code:} F1010
-        \item \textbf{Course Title:} Modeling with Differential Equations
-        \item \textbf{Credits:} 3-0-1-5.3-2-30-10-56-16-96-10-2
-        \item \textbf{Discipline:} Physics
-        \item \textbf{School:} Engineering and Sciences
-        \item \textbf{Academic Department:} Sciences
-        \item \textbf{Prerequisite:} MA1029
+        \item \highlight{Course Code:} F1010
+        \item \highlight{Course Title:} Modeling with Differential Equations
+        \item \highlight{Academic Credits:} 3-0-1-5.3-2-30-10-56-16-96-10-2
+        \item \highlight{Disciplinary Area:} Mathematical Physics
+        \item \highlight{Academic Unit:} School of Engineering and Sciences
+        \item \highlight{Department:} Mathematical Sciences
+        \item \highlight{Prerequisite Course:} MA1029 (Differential and Integral Calculus)
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Course Structure}
+\begin{frame}{Academic Structure and Organization}
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \textbf{Session Organization:}
+            \concept{Instructional Framework:}
             \begin{itemize}
-                \item \textbf{Total Sessions:} 20
-                \item \textbf{Duration:} 2 hours each
-                \item \textbf{Contact Hours:} 40 hours
+                \item \highlight{Total Sessions:} 20 instructional periods
+                \item \highlight{Session Duration:} 2 hours each
+                \item \highlight{Total Contact Hours:} 40 hours
+                \item \highlight{Learning Modality:} Face-to-face instruction
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \textbf{Distribution:}
+            \concept{Curricular Distribution:}
             \begin{itemize}
-                \item 1 opening session
-                \item 6 subject modules (3 sessions each)
-                \item 1 comprehensive review/exam
+                \item 1 introductory session
+                \item 6 thematic modules (3 sessions each)
+                \item 1 comprehensive review and assessment
             \end{itemize}
+            
+            \vspace{0.3cm}
+            \emphasis{This structure ensures progressive learning and adequate time for concept mastery.}
         \end{column}
     \end{columns}
 \end{frame}
 
-\section{Learning Objectives}
+\section{Pedagogical Objectives and Learning Outcomes}
 
-\begin{frame}{What You Will Learn}
-    Upon completion of this course, you will be able to:
+\begin{frame}{Academic Learning Objectives}
+    \concept{Upon successful completion of this course, students will demonstrate the ability to:}
+    
+    \vspace{0.4cm}
     
     \begin{enumerate}
-        \item \textbf{Define mathematical relations} between relevant physics variables of a system through fundamental principles
+        \item \highlight{Establish mathematical relationships} between relevant physical variables within a system through the application of fundamental theoretical principles
         
-        \item \textbf{Model the behavior of systems} through equations that describe the system's relevant quantities and rates of change
+        \vspace{0.3cm}
         
-        \item \textbf{Analyze reality based on facts} through inductive-deductive logical reasoning for problem-solving with valid, objective criteria
+        \item \highlight{Construct mathematical models} that accurately describe system behavior through equations representing relevant quantities and their temporal variations
+        
+        \vspace{0.3cm}
+        
+        \item \highlight{Conduct evidence-based analysis} employing inductive-deductive logical frameworks for systematic problem-solving with rigorous, objective methodological criteria
     \end{enumerate}
+    
+    \vspace{0.4cm}
+    
+    \begin{center}
+        \textcolor{mLightBrown}{\large\textbf{Mastering the Mathematical Language of Dynamic Systems}}
+    \end{center}
 \end{frame}
 
-\section{Mathematical Prerequisites}
+\section{Mathematical Prerequisites and Foundation}
 
-\begin{frame}{MA1029 Concepts Review}
-    \textbf{Essential concepts from your prerequisite course:}
+\begin{frame}{MA1029 Prerequisite Knowledge Assessment}
+    \concept{Essential mathematical concepts from your prerequisite course:}
+    
+    \vspace{0.3cm}
     
     \begin{multicols}{2}
     \begin{itemize}
         \item Functions and their properties
         \item Limits and continuity
-        \item Derivatives and differentiation rules
-        \item Chain rule applications
+        \item \textcolor{mLightBrown}{\textbf{Derivatives}} and differentiation rules
+        \item \textcolor{mLightBrown}{\textbf{Chain rule}} applications
         \item Implicit differentiation
-        \item Integration techniques
+        \item \textcolor{mLightBrown}{\textbf{Integration}} techniques
         \item Fundamental Theorem of Calculus
         \item Parametric equations
         \item Polar coordinates
         \item Infinite series
     \end{itemize}
     \end{multicols}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Important}
+        Strong calculus foundation is \textbf{essential} for success in this course!
+    \end{alertblock}
 \end{frame}
 
-\begin{frame}{Quick Review: Derivatives}
-    \textbf{Basic differentiation rules:}
+\begin{frame}{Mathematical Review: Differential Calculus}
+    \concept{Fundamental differentiation rules:}
     
     \begin{align}
-        \frac{d}{dx}[x^n] &= nx^{n-1} \\
-        \frac{d}{dx}[e^x] &= e^x \\
-        \frac{d}{dx}[\sin x] &= \cos x \\
-        \frac{d}{dx}[\ln x] &= \frac{1}{x}
+        \frac{d}{dx}[x^n] &= \formula{nx^{n-1}} \\[0.2cm]
+        \frac{d}{dx}[e^x] &= \formula{e^x} \\[0.2cm]
+        \frac{d}{dx}[\sin x] &= \formula{\cos x} \\[0.2cm]
+        \frac{d}{dx}[\ln x] &= \formula{\frac{1}{x}}
     \end{align}
     
-    \textbf{Chain Rule:}
+    \vspace{0.3cm}
+    
+    \concept{Chain Rule (Composite Function Differentiation):}
     \begin{equation}
-        \frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)
+        \boxed{\frac{d}{dx}[f(g(x))] = \formula{f'(g(x)) \cdot g'(x)}}
     \end{equation}
 \end{frame}
 
-\section{Introduction to Differential Equations}
+\section{Theoretical Introduction to Differential Equations}
 
-\begin{frame}{What is a Differential Equation?}
+\begin{frame}{Fundamental Definition and Conceptual Framework}
     \begin{definition}
-        A \textbf{differential equation} is an equation that relates a function with one or more of its derivatives.
+        A \concept{differential equation} is a mathematical equation that establishes a relationship between a function and one or more of its derivatives, expressing how quantities change with respect to one another.
     \end{definition}
     
-    \textbf{Examples:}
+    \vspace{0.4cm}
+    
+    \concept{Illustrative Examples:}
     \begin{align}
-        \frac{dy}{dx} &= 3x + 2 \quad \text{(First-order)} \\
-        \frac{d^2y}{dx^2} + 4y &= 0 \quad \text{(Second-order)} \\
-        \frac{\partial u}{\partial t} &= \frac{\partial^2 u}{\partial x^2} \quad \text{(Partial)}
+        \frac{dy}{dx} &= 3x + 2 && \text{\textcolor{mLightGreen}{(First-order linear)}} \\[0.2cm]
+        \frac{d^2y}{dx^2} + 4y &= 0 && \text{\textcolor{mLightBrown}{(Second-order homogeneous)}} \\[0.2cm]
+        \frac{\partial u}{\partial t} &= \frac{\partial^2 u}{\partial x^2} && \text{\textcolor{mDarkTeal}{(Partial differential equation)}}
     \end{align}
 \end{frame}
 
-\begin{frame}{Physical Significance}
-    Differential equations naturally arise in physics and engineering:
+\begin{frame}{Physical Significance and Applications}
+    \concept{Differential equations emerge naturally in the mathematical modeling of physical phenomena:}
+    
+    \vspace{0.3cm}
     
     \begin{itemize}
-        \item \textbf{Newton's Second Law:} $F = ma = m\frac{d^2x}{dt^2}$
-        \item \textbf{Radioactive Decay:} $\frac{dN}{dt} = -\lambda N$
-        \item \textbf{Population Growth:} $\frac{dP}{dt} = rP$
-        \item \textbf{Heat Conduction:} $\frac{\partial T}{\partial t} = \alpha \nabla^2 T$
-        \item \textbf{Wave Equation:} $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$
+        \item \highlight{Newton's Second Law:} $F = ma = m\frac{d^2x}{dt^2}$
+        \item \highlight{Radioactive Decay:} $\frac{dN}{dt} = -\lambda N$
+        \item \highlight{Population Dynamics:} $\frac{dP}{dt} = rP$
+        \item \highlight{Heat Conduction:} $\frac{\partial T}{\partial t} = \alpha \nabla^2 T$
+        \item \highlight{Wave Propagation:} $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$
     \end{itemize}
     
-    \alert{Differential equations are the language of change!}
+    \vspace{0.5cm}
+    
+    \begin{center}
+        \Large\textcolor{mLightBrown}{\textbf{Differential equations constitute the fundamental language of change!}}
+    \end{center}
 \end{frame}
 
-\begin{frame}{Classification of Differential Equations}
+\begin{frame}{Taxonomic Classification of Differential Equations}
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \textbf{By Type:}
+            \concept{By Mathematical Type:}
             \begin{itemize}
-                \item Ordinary (ODE)
-                \item Partial (PDE)
+                \item \highlight{Ordinary} (ODE)
+                \item \highlight{Partial} (PDE)
             \end{itemize}
             
-            \textbf{By Order:}
+            \vspace{0.3cm}
+            
+            \concept{By Derivative Order:}
             \begin{itemize}
-                \item First-order
-                \item Second-order
-                \item Higher-order
+                \item First-order equations
+                \item Second-order equations
+                \item Higher-order equations
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \textbf{By Linearity:}
+            \concept{By Linearity Property:}
             \begin{itemize}
-                \item Linear
-                \item Non-linear
+                \item \highlight{Linear} equations
+                \item \highlight{Non-linear} equations
             \end{itemize}
             
-            \textbf{By Coefficients:}
+            \vspace{0.3cm}
+            
+            \concept{By Coefficient Nature:}
             \begin{itemize}
                 \item Constant coefficients
                 \item Variable coefficients
             \end{itemize}
         \end{column}
     \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \emphasis{Understanding these classifications is fundamental for selecting appropriate solution methodologies.}
 \end{frame}
 
-\section{Mathematical Modeling}
+\section{Mathematical Modeling and Problem-Solving Framework}
 
-\begin{frame}{The Modeling Process}
+\begin{frame}{The Mathematical Modeling Process}
     \begin{center}
         \begin{tikzpicture}[
             node distance=4.5cm, 
@@ -229,122 +279,174 @@
     \end{center}
 \end{frame}
 
-\begin{frame}{Modeling Principles}
-    \textbf{Key steps in mathematical modeling:}
+\begin{frame}{Systematic Modeling Principles}
+    \concept{Fundamental steps in rigorous mathematical modeling:}
+    
+    \vspace{0.3cm}
     
     \begin{enumerate}
-        \item \textbf{Identify} the variables and parameters
-        \item \textbf{Make assumptions} to simplify the problem
-        \item \textbf{Formulate} the differential equation
-        \item \textbf{Solve} the equation (analytically or numerically)
-        \item \textbf{Interpret} the solution in physical terms
-        \item \textbf{Validate} against experimental data
-        \item \textbf{Refine} the model if necessary
+        \item \highlight{Identify} the relevant variables and parameters within the system
+        \item \highlight{Formulate assumptions} to simplify the complex real-world scenario
+        \item \highlight{Establish} the governing differential equation(s)
+        \item \highlight{Solve} the equation using analytical or numerical methods
+        \item \highlight{Interpret} the mathematical solution in the physical context
+        \item \highlight{Validate} the model against experimental or observational data
+        \item \highlight{Refine} the model iteratively to improve accuracy
     \end{enumerate}
+    
+    \vspace{0.3cm}
+    
+    \emphasis{This systematic approach ensures robust and reliable mathematical representations of physical phenomena.}
 \end{frame}
 
-\begin{frame}{Example: Population Growth Model}
-    \textbf{Problem:} Model the growth of a population over time.
+\begin{frame}{Case Study: Population Dynamics Model}
+    \concept{Problem Statement:} Develop a mathematical model describing temporal population variations.
     
-    \textbf{Assumptions:}
+    \vspace{0.3cm}
+    
+    \concept{Fundamental Assumptions:}
     \begin{itemize}
-        \item Birth rate is proportional to current population
-        \item No deaths, immigration, or emigration
-        \item Unlimited resources
+        \item Birth rate exhibits proportionality to current population size
+        \item Negligible mortality, immigration, and emigration effects
+        \item Unlimited environmental resources and carrying capacity
     \end{itemize}
     
-    \textbf{Mathematical Model:}
+    \vspace{0.3cm}
+    
+    \concept{Mathematical Formulation:}
     \begin{equation}
         \frac{dP}{dt} = rP
     \end{equation}
     
-    where $P(t)$ is population at time $t$ and $r$ is the growth rate.
+    where $P(t)$ represents population at time $t$ and $r$ denotes the intrinsic growth rate parameter.
+    
+    \vspace{0.2cm}
+    
+    \emphasis{This fundamental model serves as the foundation for more sophisticated population dynamics theories.}
 \end{frame}
 
-\section{Course Overview}
+\section{Curricular Structure and Academic Assessment}
 
-\begin{frame}{Module Structure}
+\begin{frame}{Modular Curriculum Architecture}
+    \concept{Thematic Module Organization:}
+    
+    \vspace{0.3cm}
+    
     \begin{enumerate}
-        \item \textbf{First-Order Differential Equations} (Sessions 2-4)
-        \item \textbf{Second-Order Differential Equations} (Sessions 5-7)
-        \item \textbf{Power Series Solutions and Special Functions} (Sessions 8-10)
-        \item \textbf{Laplace Transform Methods} (Sessions 11-13)
-        \item \textbf{Non-Linear Differential Equations} (Sessions 14-16)
-        \item \textbf{Partial Differential Equations} (Sessions 17-19)
+        \item \highlight{First-Order Differential Equations} (Sessions 2-4)
+        \item \highlight{Second-Order Differential Equations} (Sessions 5-7)
+        \item \highlight{Power Series Solutions and Special Functions} (Sessions 8-10)
+        \item \highlight{Laplace Transform Methods} (Sessions 11-13)
+        \item \highlight{Non-Linear Differential Equations} (Sessions 14-16)
+        \item \highlight{Partial Differential Equations} (Sessions 17-19)
     \end{enumerate}
     
-    \textbf{Final Session:} Comprehensive Review and Assessment (Session 20)
+    \vspace{0.3cm}
+    
+    \concept{Culminating Session:} Comprehensive Review and Integrative Assessment (Session 20)
+    
+    \vspace{0.2cm}
+    
+    \emphasis{Each module builds systematically upon previous concepts, ensuring coherent knowledge development.}
 \end{frame}
 
-\begin{frame}{Assessment Framework}
+\begin{frame}{Comprehensive Assessment Framework}
+    \concept{Evaluation Components and Weightings:}
+    
+    \vspace{0.3cm}
+    
     \begin{itemize}
-        \item \textbf{50\% Cumulative Theoretical-Practical Midterm Examinations}
+        \item \highlight{50\% Cumulative Theoretical-Practical Midterm Examinations}
         \begin{itemize}
-            \item After modules 2, 4, and 6 (sessions 7, 13, 19)
+            \item[\textbullet] Administered after modules 2, 4, and 6 (sessions 7, 13, 19)
+            \item[\textbullet] Emphasizes conceptual understanding and practical application
         \end{itemize}
         
-        \item \textbf{20\% Activities, Assignments, and Integrating Cases}
+        \item \highlight{20\% Activities, Assignments, and Integrating Cases}
         \begin{itemize}
-            \item During practice sessions (4, 7, 10, 13, 16, 19)
+            \item[\textbullet] Conducted during practice sessions (4, 7, 10, 13, 16, 19)
+            \item[\textbullet] Promotes active learning and skill development
         \end{itemize}
         
-        \item \textbf{30\% Final Integrating Examination}
+        \item \highlight{30\% Final Integrating Examination}
         \begin{itemize}
-            \item Session 20 (comprehensive assessment)
+            \item[\textbullet] Session 20 comprehensive assessment
+            \item[\textbullet] Synthesizes knowledge across all course modules
         \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Required Textbooks}
-    \textbf{Primary Text:}
+\begin{frame}{Academic Resources and Bibliography}
+    \concept{Primary Textbook:}
     \begin{itemize}
-        \item Nagle, R. Kent. \textit{Fundamentals of Differential Equations and Boundary Value Problems}, 6th ed. Boston: Pearson Education, 2012.
+        \item Nagle, R. Kent, et al. \textit{Fundamentals of Differential Equations and Boundary Value Problems}, 6th ed. Boston: Pearson Education, 2012.
     \end{itemize}
     
-    \textbf{Supplementary References:}
+    \vspace{0.3cm}
+    
+    \concept{Supplementary Academic References:}
     \begin{itemize}
         \item Simmons, George F. \textit{Differential Equations with Applications and Historical Notes}, 2nd ed. New York: McGraw Hill, 1991.
-        \item Boyce, W., DiPrima, R., Meade, D. \textit{Elementary Differential Equations}. Wiley, 2016.
+        \item Boyce, W., DiPrima, R., Meade, D. \textit{Elementary Differential Equations and Boundary Value Problems}. Wiley, 2016.
+        \item Zill, Dennis G. \textit{A First Course in Differential Equations with Modeling Applications}, 11th ed. Boston: Cengage Learning, 2017.
     \end{itemize}
+    
+    \vspace{0.2cm}
+    
+    \emphasis{These resources provide comprehensive theoretical foundations and practical applications essential for academic success.}
 \end{frame}
 
-\section{Next Steps}
+\section{Course Progression and Preparation Guidelines}
 
-\begin{frame}{What's Coming Next}
-    \textbf{Next Session (Session 2):} First-Order Differential Equations
+\begin{frame}{Upcoming Academic Content}
+    \concept{Next Session (Session 2):} First-Order Differential Equations - Theoretical Foundations
     
-    \textbf{Topics to cover:}
+    \vspace{0.3cm}
+    
+    \concept{Topics for Examination:}
     \begin{itemize}
         \item Linear equations with variable coefficients
-        \item Separable equations
-        \item Solution techniques and methods
+        \item Separable differential equations
+        \item Advanced solution techniques and methodologies
+        \item Initial value problems and boundary conditions
     \end{itemize}
     
-    \textbf{Preparation:}
+    \vspace{0.3cm}
+    
+    \concept{Preparatory Requirements:}
     \begin{itemize}
-        \item Review calculus fundamentals
-        \item Read Chapter 1 of Nagle textbook
-        \item Practice basic integration techniques
+        \item Comprehensive review of differential and integral calculus fundamentals
+        \item Study Chapter 1 of the primary textbook (Nagle et al.)
+        \item Practice advanced integration techniques and substitution methods
+        \item Familiarize with mathematical notation and terminology
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Questions and Discussion}
+\begin{frame}{Academic Discourse and Inquiry}
     \begin{center}
-        \Huge Questions?
+        \Huge \concept{Questions and Academic Discussion}
         
         \vspace{1cm}
         
-        \large Let's discuss any concerns about the course structure, expectations, or mathematical prerequisites.
+        \large Let us engage in scholarly discourse regarding the course structure, academic expectations, mathematical prerequisites, or any theoretical concepts requiring clarification.
+        
+        \vspace{0.5cm}
+        
+        \emphasis{Your active participation is essential for optimal learning outcomes.}
     \end{center}
 \end{frame}
 
 \begin{frame}[standout]
-    Welcome to F1010!\\
+    \concept{Welcome to F1010!}\\
     \textbf{Modeling with Differential Equations}
     
     \vspace{1cm}
     
-    Ready to explore the mathematics of change?
+    \Large Are you prepared to embark upon this rigorous exploration of the mathematical foundations governing dynamic systems and temporal change?
+    
+    \vspace{0.5cm}
+    
+    \emphasis{Excellence in mathematical modeling awaits your dedication.}
 \end{frame}
 
 \end{document}
