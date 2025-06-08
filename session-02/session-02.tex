@@ -1,0 +1,236 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% Use the metropolis theme
+\usetheme{metropolis}
+
+% Set the color scheme
+\usepackage{xcolor}
+\definecolor{mDarkTeal}{HTML}{23373b}
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mLightGreen}{HTML}{14B03D}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Additional packages
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% Title information
+\title{F1010 - Modeling with Differential Equations}
+\subtitle{Session 2: First-Order Differential Equations \\ Linear and Separable Equations}
+\author{Dr. Juliho Castillo\\julihocc@tec.mx}
+\institute{School of Engineering and Sciences\\Academic Department of Sciences}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\maketitle
+
+% Table of contents
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction and Recap}
+
+\begin{frame}{Session Objectives}
+    By the end of this session, you will be able to:
+    \begin{itemize}
+        \item Identify and define first-order linear differential equations.
+        \item Solve first-order linear differential equations using the integrating factor method.
+        \item Identify and define separable differential equations.
+        \item Solve separable differential equations by separating variables and integrating.
+    \end{itemize}
+\end{frame}
+
+\section{Linear Equations with Variable Coefficients}
+
+\begin{frame}{Definition and Standard Form}
+    A \textbf{first-order linear differential equation} can be written in the standard form:
+    \begin{equation}
+        \frac{dy}{dx} + P(x)y = Q(x)
+        \label{eq:linear_de_standard_form}
+    \end{equation}
+    where $P(x)$ and $Q(x)$ are continuous functions of $x$.
+    \vspace{1em}
+    \textbf{Key characteristics:}
+    \begin{itemize}
+        \item The dependent variable $y$ and its derivative $\frac{dy}{dx}$ appear to the first power.
+        \item There are no products of $y$ and $\frac{dy}{dx}$.
+        \item Coefficients $P(x)$ and $Q(x)$ can be functions of the independent variable $x$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Method of Solution: Integrating Factor (Part 1)}
+    To solve $\frac{dy}{dx} + P(x)y = Q(x)$:
+    \begin{enumerate}
+        \item Calculate the \textbf{integrating factor}, $\mu(x)$:
+        \begin{equation}
+            \mu(x) = e^{\int P(x)dx}
+            \label{eq:integrating_factor}
+        \end{equation}
+        \item Multiply the entire standard DE (Equation \ref{eq:linear_de_standard_form}) by $\mu(x)$:
+        \begin{equation}
+            \mu(x)\frac{dy}{dx} + \mu(x)P(x)y = \mu(x)Q(x)
+        \end{equation}
+        The left side becomes the derivative of a product: $\frac{d}{dx}[\mu(x)y]$.
+        \begin{equation}
+            \frac{d}{dx}[\mu(x)y] = \mu(x)Q(x)
+        \end{equation}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Method of Solution: Integrating Factor (Part 2)}
+    Continuing the solution for $\frac{dy}{dx} + P(x)y = Q(x)$:
+    \begin{enumerate}
+        \setcounter{enumi}{2} % Continue numbering from previous frame
+        \item Integrate both sides with respect to $x$:
+        \begin{equation}
+            \mu(x)y = \int \mu(x)Q(x)dx + C
+        \end{equation}
+        \item Solve for $y(x)$:
+        \begin{equation}
+            y(x) = \frac{1}{\mu(x)} \left( \int \mu(x)Q(x)dx + C \right)
+            \label{eq:linear_de_solution}
+        \end{equation}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Example: Linear DE (Problem Setup)}
+    Solve the differential equation: $x\frac{dy}{dx} - 2y = x^2$ for $x > 0$.
+    \vspace{1em}
+    \textbf{Step 1: Standard Form}
+    \begin{itemize}
+        \item Divide by $x$ to match the form $\frac{dy}{dx} + P(x)y = Q(x)$.
+        \item $\frac{dy}{dx} - \frac{2}{x}y = x$.
+        \item Identify $P(x) = -\frac{2}{x}$ and $Q(x) = x$.
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Step 2: Integrating Factor $\mu(x)$}
+    \begin{itemize}
+        \item $\mu(x) = e^{\int P(x)dx} = e^{\int -\frac{2}{x}dx}$.
+        \item $\int -\frac{2}{x}dx = -2\ln|x| = \ln|x|^{-2} = \ln x^{-2}$ (since $x > 0$).
+        \item So, $\mu(x) = e^{\ln x^{-2}} = x^{-2} = \frac{1}{x^2}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Linear DE (Solution Steps)}
+    Continuing with $x\frac{dy}{dx} - 2y = x^2$, where $\mu(x) = \frac{1}{x^2}$.
+    \vspace{1em}
+    \textbf{Step 3: Multiply by $\mu(x)$ and Integrate}
+    \begin{itemize}
+        \item Multiply the standard form by $\mu(x)$: $\frac{1}{x^2}\left(\frac{dy}{dx} - \frac{2}{x}y\right) = \frac{1}{x^2} \cdot x$.
+        \item This simplifies to $\frac{1}{x^2}\frac{dy}{dx} - \frac{2}{x^3}y = \frac{1}{x}$.
+        \item The left side is $\frac{d}{dx}\left[\frac{1}{x^2}y\right]$.
+        \item So, $\frac{d}{dx}\left[\frac{1}{x^2}y\right] = \frac{1}{x}$.
+        \item Integrate: $\frac{1}{x^2}y = \int \frac{1}{x}dx = \ln|x| + C = \ln x + C$ (since $x > 0$).
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Step 4: Solve for $y(x)$}
+    \begin{itemize}
+        \item $y(x) = x^2(\ln x + C)$.
+    \end{itemize}
+\end{frame}
+
+\section{Separable Equations}
+
+\begin{frame}{Definition and Standard Form}
+    A first-order differential equation is \textbf{separable} if it can be written in the form:
+    \begin{equation}
+        M(x)dx + N(y)dy = 0
+        \label{eq:separable_form1}
+    \end{equation}
+    or, equivalently, if it can be expressed as:
+    \begin{equation}
+        \frac{dy}{dx} = f(x)g(y)
+        \label{eq:separable_form2}
+    \end{equation}
+    The key is that all terms involving $x$ can be grouped with $dx$, and all terms involving $y$ can be grouped with $dy$.
+\end{frame}
+
+\begin{frame}{Method of Solution: Separation and Integration}
+    To solve a separable equation of the form $\frac{dy}{dx} = f(x)g(y)$:
+    \begin{enumerate}
+        \item \textbf{Separate variables}: If $g(y) \neq 0$, rewrite as:
+        \begin{equation}
+            \frac{1}{g(y)}dy = f(x)dx
+        \end{equation}
+        \item \textbf{Integrate both sides} with respect to their respective variables:
+        \begin{equation}
+            \int \frac{1}{g(y)}dy = \int f(x)dx + C
+            \label{eq:separable_solution}
+        \end{equation}
+        where $C$ is the constant of integration.
+        \item \textbf{Solve for $y(x)$} if possible, or leave the solution in implicit form.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Example: Separable DE}
+    Solve the differential equation: $\frac{dy}{dx} = \frac{x^2}{y^2}$.
+    \vspace{1em}
+    \textbf{Step 1: Separate Variables}
+    $y^2 dy = x^2 dx$.
+    \vspace{1em}
+    \textbf{Step 2: Integrate Both Sides}
+    $\int y^2 dy = \int x^2 dx + C$.
+    $\frac{y^3}{3} = \frac{x^3}{3} + C_1$.
+    \vspace{1em}
+    \textbf{Step 3: Solve for $y(x)$ (optional form)}
+    $y^3 = x^3 + 3C_1$. Let $C = 3C_1$.
+    $y^3 = x^3 + C$.
+    $y(x) = \sqrt[3]{x^3 + C}$.
+\end{frame}
+
+\section{Summary and Next Steps}
+
+\begin{frame}{Key Takeaways}
+    \begin{itemize}
+        \item \textbf{Linear First-Order DEs} ($\frac{dy}{dx} + P(x)y = Q(x)$):
+        \begin{itemize}
+            \item Solved using an integrating factor $\mu(x) = e^{\int P(x)dx}$.
+            \item General solution: $y(x) = \frac{1}{\mu(x)} \left( \int \mu(x)Q(x)dx + C \right)$.
+        \end{itemize}
+        \item \textbf{Separable DEs} ($\frac{dy}{dx} = f(x)g(y)$):
+        \begin{itemize}
+            \item Solved by separating variables: $\frac{1}{g(y)}dy = f(x)dx$.
+            \item Integrate both sides: $\int \frac{1}{g(y)}dy = \int f(x)dx + C$.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Looking Ahead: Session 3}
+    \textbf{Next Session (Session 3): Modeling with First-Order Equations}
+    \begin{itemize}
+        \item Applications of linear and separable equations.
+        \item Constructing mathematical models for physical phenomena:
+        \begin{itemize}
+            \item Population dynamics.
+            \item Mixing problems.
+            \item Radioactive decay.
+            \item Newton's law of cooling.
+        \end{itemize}
+        \item Setting up and solving these models.
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Preparation:}
+    \begin{itemize}
+        \item Review today's methods for solving linear and separable DEs.
+        \item Consider how rates of change are described in physical systems.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+    Questions?
+    \vspace{1cm}
+    Practice these techniques!
+\end{frame}
+
+\end{document}
