@@ -104,17 +104,27 @@
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Example: Linear DE (Problem Setup)}
+\begin{frame}{Example: Linear DE (Problem Statement)}
     Solve the differential equation: $x\frac{dy}{dx} - 2y = x^2$ for $x > 0$.
     \vspace{1em}
-    \textbf{Step 1: Standard Form}
+    We will solve this step-by-step.
+\end{frame}
+
+\begin{frame}{Example: Linear DE (Step 1: Standard Form)}
+    Given: $x\frac{dy}{dx} - 2y = x^2$ for $x > 0$.
+    \vspace{1em}
+    \textbf{Standard Form}
     \begin{itemize}
         \item Divide by $x$ to match the form $\frac{dy}{dx} + P(x)y = Q(x)$.
         \item $\frac{dy}{dx} - \frac{2}{x}y = x$.
         \item Identify $P(x) = -\frac{2}{x}$ and $Q(x) = x$.
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Linear DE (Step 2: Integrating Factor)}
+    From Step 1: $\frac{dy}{dx} - \frac{2}{x}y = x$, with $P(x) = -\frac{2}{x}$.
     \vspace{1em}
-    \textbf{Step 2: Integrating Factor $\mu(x)$}
+    \textbf{Integrating Factor $\mu(x)$}
     \begin{itemize}
         \item $\mu(x) = e^{\int P(x)dx} = e^{\int -\frac{2}{x}dx}$.
         \item $\int -\frac{2}{x}dx = -2\ln|x| = \ln|x|^{-2} = \ln x^{-2}$ (since $x > 0$).
@@ -122,10 +132,10 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Example: Linear DE (Solution Steps)}
-    Continuing with $x\frac{dy}{dx} - 2y = x^2$, where $\mu(x) = \frac{1}{x^2}$.
+\begin{frame}{Example: Linear DE (Step 3: Multiply and Integrate)}
+    Standard form: $\frac{dy}{dx} - \frac{2}{x}y = x$. Integrating factor: $\mu(x) = \frac{1}{x^2}$.
     \vspace{1em}
-    \textbf{Step 3: Multiply by $\mu(x)$ and Integrate}
+    \textbf{Multiply by $\mu(x)$ and Integrate}
     \begin{itemize}
         \item Multiply the standard form by $\mu(x)$: $\frac{1}{x^2}\left(\frac{dy}{dx} - \frac{2}{x}y\right) = \frac{1}{x^2} \cdot x$.
         \item This simplifies to $\frac{1}{x^2}\frac{dy}{dx} - \frac{2}{x^3}y = \frac{1}{x}$.
@@ -133,11 +143,16 @@
         \item So, $\frac{d}{dx}\left[\frac{1}{x^2}y\right] = \frac{1}{x}$.
         \item Integrate: $\frac{1}{x^2}y = \int \frac{1}{x}dx = \ln|x| + C = \ln x + C$ (since $x > 0$).
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Linear DE (Step 4: Solve for $y(x)$)}
+    From Step 3: $\frac{1}{x^2}y = \ln x + C$.
     \vspace{1em}
-    \textbf{Step 4: Solve for $y(x)$}
+    \textbf{Solve for $y(x)$}
     \begin{itemize}
         \item $y(x) = x^2(\ln x + C)$.
     \end{itemize}
+    This is the general solution for $x > 0$.
 \end{frame}
 
 \section{Separable Equations}
