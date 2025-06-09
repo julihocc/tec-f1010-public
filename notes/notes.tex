@@ -59,63 +59,49 @@
 
 \mainmatter % For main content chapters
 
-% ============================================================================
+% =========================================================================
 % PART I: INTRODUCTION AND FIRST-ORDER DIFFERENTIAL EQUATIONS (Sessions 1-4)
-% ============================================================================
+% =========================================================================
 \part{Introduction and First-Order Differential Equations}
 \label{part:intro_and_first_order_de}
 
-\chapter{Introduction to the Course and Differential Equations}
+\chapter{Theoretical Foundations and Course Introduction}
 \label{chap:introduction}
 
-\section{Welcome to F1010}
-\label{sec:welcome}
+\section{Course Overview and Academic Framework}
 
 \subsection{Course Information}
-\label{ssec:course_info}
 \begin{itemize}
-    \item \textbf{Course Code:} F1010
-    \item \textbf{Course Title:} Modeling with Differential Equations
-    \item \textbf{Credits:} 3-0-1-5.3-2-30-10-56-16-96-10-2
-    \item \textbf{Discipline:} Physics
-    \item \textbf{School:} Engineering and Sciences
-    \item \textbf{Academic Department:} Sciences
-    \item \textbf{Prerequisite:} MA1029
+    \item Course Code: F1010
+    \item Course Title: Modeling with Differential Equations
+    \item Academic Credits: 3-0-1-5.3-2-30-10-56-16-96-10-2
+    \item Disciplinary Area: Mathematical Physics
+    \item Academic Unit: School of Engineering and Sciences
+    \item Department: Mathematical Sciences
+    \item Prerequisite Course: MA1029 (Differential and Integral Calculus)
 \end{itemize}
 
-\subsection{Course Structure}
-\label{ssec:course_structure}
-\textbf{Session Organization:}
+\subsection{Academic Structure and Organization}
 \begin{itemize}
-    \item \textbf{Total Sessions:} 20 (conceptual, this is a book now)
-    \item \textbf{Duration:} Equivalent to 2 hours each session
-    \item \textbf{Contact Hours:} Equivalent to 40 hours
+    \item Total Sessions: 20 instructional periods
+    \item Session Duration: 2 hours each
+    \item Total Contact Hours: 40 hours
+    \item Learning Modality: Face-to-face instruction
+    \item 1 introductory session
+    \item 6 thematic modules (3 sessions each)
+    \item 1 comprehensive review and assessment
 \end{itemize}
 
-\textbf{Content Distribution (conceptual chapters/parts):}
-\begin{itemize}
-    \item 1 opening chapter/section (this one)
-    \item 6 subject modules (covered in subsequent chapters)
-    \item 1 comprehensive review/appendix (optional)
-\end{itemize}
-
-\section{Learning Objectives}
-\label{sec:learning_objectives}
-Upon completion of this course (and study of this book), you will be able to:
-
+\section{Pedagogical Objectives and Learning Outcomes}
+\textbf{Upon successful completion of this course, students will demonstrate the ability to:}
 \begin{enumerate}
-    \item \textbf{Define mathematical relations} between relevant physics variables of a system through fundamental principles.
-    \item \textbf{Model the behavior of systems} through equations that describe the system's relevant quantities and rates of change.
-    \item \textbf{Analyze reality based on facts} through inductive-deductive logical reasoning for problem-solving with valid, objective criteria.
+    \item Establish mathematical relationships between relevant physical variables within a system through the application of fundamental theoretical principles.
+    \item Construct mathematical models that accurately describe system behavior through equations representing relevant quantities and their temporal variations.
+    \item Conduct evidence-based analysis employing inductive-deductive logical frameworks for systematic problem-solving with rigorous, objective methodological criteria.
 \end{enumerate}
 
-\section{Mathematical Prerequisites}
-\label{sec:math_prereqs}
-
-\subsection{MA1029 Concepts Review}
-\label{ssec:ma1029_review}
-Essential concepts from your prerequisite course:
-
+\section{Mathematical Prerequisites and Foundation}
+\textbf{Essential mathematical concepts from your prerequisite course:}
 \begin{multicols}{2}
 \begin{itemize}
     \item Functions and their properties
@@ -131,83 +117,49 @@ Essential concepts from your prerequisite course:
 \end{itemize}
 \end{multicols}
 
-\section{Introduction to Differential Equations}
-\label{sec:intro_diff_eq}
+\section{Theoretical Introduction to Differential Equations}
+\textbf{Definition:}
+A \textbf{differential equation} is a mathematical equation that establishes a relationship between a function and one or more of its derivatives, expressing how quantities change with respect to one another.
 
-What is a Differential Equation?
-\newtheorem{definition}{Definition}[chapter] % Define a definition environment
-\begin{definition}
-    A \textbf{differential equation} is an equation that relates a function with one or more of its derivatives.
-\end{definition}
+\textbf{Illustrative Examples:}
+\begin{align*}
+    \frac{dy}{dx} = 3x + 2 \\  % First-order linear
+    \frac{d^2y}{dx^2} + 4y = 0 \\  % Second-order homogeneous
+    \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}  % Partial differential equation
+\end{align*}
 
-Examples:
-\begin{align}
-    \frac{dy}{dx} &= 3x + 2 \quad &\text{(First-order ODE)} \label{eq:ex_first_order}\\
-    \frac{d^2y}{dx^2} + 4y &= 0 \quad &\text{(Second-order ODE)} \label{eq:ex_second_order}\\
-    \frac{\partial u}{\partial t} &= \frac{\partial^2 u}{\partial x^2} \quad &\text{(Partial Differential Equation - PDE)} \label{eq:ex_pde}
-\end{align}
-
-\subsection{Physical Significance}
-\label{ssec:physical_significance}
-Differential equations naturally arise in physics and engineering:
+\textbf{Physical Significance and Applications:}
+Differential equations emerge naturally in the mathematical modeling of physical phenomena:
 \begin{itemize}
-    \item \textbf{Newton's Second Law:} $F = ma = m\frac{d^2x}{dt^2}$
-    \item \textbf{Radioactive Decay:} $\frac{dN}{dt} = -\lambda N$
-    \item \textbf{Population Growth:} $\frac{dP}{dt} = rP$
-    \item \textbf{Heat Conduction:} $\frac{\partial T}{\partial t} = \alpha \nabla^2 T$
-    \item \textbf{Wave Equation:} $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$
-\end{itemize}
-Differential equations are the language of change!
-
-\subsection{Classification of Differential Equations}
-\label{ssec:classification_de}
-Differential equations can be classified in several ways:
-
-\textbf{By Type:}
-\begin{itemize}
-    \item Ordinary Differential Equation (ODE): Contains derivatives with respect to only one independent variable.
-    \item Partial Differential Equation (PDE): Contains partial derivatives with respect to two or more independent variables.
+    \item Newton's Second Law: $F = ma = m\frac{d^2x}{dt^2}$
+    \item Radioactive Decay: $\frac{dN}{dt} = -\lambda N$
+    \item Population Dynamics: $\frac{dP}{dt} = rP$
+    \item Heat Conduction: $\frac{\partial T}{\partial t} = \alpha \nabla^2 T$
+    \item Wave Propagation: $\frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2}$
 \end{itemize}
 
-\textbf{By Order:}
-The order of a differential equation is the order of the highest derivative present in the equation.
+\textbf{Taxonomic Classification of Differential Equations:}
 \begin{itemize}
-    \item First-order (e.g., Equation~\ref{eq:ex_first_order})
-    \item Second-order (e.g., Equation~\ref{eq:ex_second_order})
-    \item Higher-order
+    \item \textbf{By Mathematical Type:} Ordinary (ODE), Partial (PDE)
+    \item \textbf{By Derivative Order:} First-order, Second-order, Higher-order
+    \item \textbf{By Linearity Property:} Linear, Non-linear
+    \item \textbf{By Coefficient Nature:} Constant coefficients, Variable coefficients
 \end{itemize}
 
-\textbf{By Linearity:}
-A differential equation is linear if the dependent variable and its derivatives appear only to the first power and are not multiplied together. Otherwise, it is non-linear.
-\begin{itemize}
-    \item Linear
-    \item Non-linear
-\end{itemize}
-
-\textbf{By Coefficients:}
-\begin{itemize}
-    \item Constant coefficients: The coefficients of the terms involving the dependent variable and its derivatives are constants.
-    \item Variable coefficients: At least one coefficient is a function of the independent variable.
-\end{itemize}
-
-\section{Mathematical Modeling}
-\label{sec:math_modeling}
-
-\subsection{The Modeling Process}
-\label{ssec:modeling_process}
-The process of mathematical modeling can be visualized as follows:
+\section{Mathematical Modeling and Problem-Solving Framework}
+\textbf{The Mathematical Modeling Process:}
 \begin{center}
     \begin{tikzpicture}[
-        node distance=3cm and 2.5cm, % Adjusted distance
+        node distance=4.5cm, 
         auto,
         box/.style={
-            draw,
-            rectangle,
+            draw, 
+            rectangle, 
             rounded corners=3pt,
-            text width=3cm, % Adjusted width
+            text width=3.5cm, 
             text centered,
-            minimum height=1.2cm, % Adjusted height
-            fill=gray!10, % Generic fill
+            minimum height=1.5cm,
+            fill=gray!10,
             draw=black,
             thick,
             font=\small\bfseries
@@ -215,19 +167,16 @@ The process of mathematical modeling can be visualized as follows:
         arrow/.style={
             ->,
             thick,
-            color=blue!70!black, % Generic arrow color
             >=stealth
         },
         label/.style={
-            font=\scriptsize,
-            color=black
+            font=\scriptsize
         }
     ]
-        \node (real) [box, fill=green!20] {Real World\\Problem};
-        \node (math) [box, right of=real, node distance=4cm] {Mathematical\\Model}; % Increased node distance
-        \node (solution) [box, below of=math, node distance=3cm] {Mathematical\\Solution};
-        \node (interpret) [box, left of=solution, node distance=4cm] {Physical\\Interpretation}; % Increased node distance
-
+        \node (real) [box, fill=lightgray] {Real World\\Problem};
+        \node (math) [box, right of=real] {Mathematical\\Model};
+        \node (solution) [box, below of=math] {Mathematical\\Solution};
+        \node (interpret) [box, left of=solution] {Physical\\Interpretation};
         \draw[arrow] (real) -- (math) node[midway, above, label] {Formulation};
         \draw[arrow] (math) -- (solution) node[midway, right, label] {Solution};
         \draw[arrow] (solution) -- (interpret) node[midway, below, label] {Interpretation};
@@ -235,51 +184,46 @@ The process of mathematical modeling can be visualized as follows:
     \end{tikzpicture}
 \end{center}
 
-\subsection{Modeling Principles}
-\label{ssec:modeling_principles}
-Key steps in mathematical modeling:
+\textbf{Systematic Modeling Principles:}
 \begin{enumerate}
-    \item \textbf{Identify} the variables and parameters.
-    \item \textbf{Make assumptions} to simplify the problem.
-    \item \textbf{Formulate} the differential equation(s).
-    \item \textbf{Solve} the equation(s) (analytically or numerically).
-    \item \textbf{Interpret} the solution in physical terms.
-    \item \textbf{Validate} against experimental data or known facts.
-    \item \textbf{Refine} the model if necessary.
+    \item Identify the relevant variables and parameters within the system
+    \item Formulate assumptions to simplify the complex real-world scenario
+    \item Establish the governing differential equation(s)
+    \item Solve the equation using analytical or numerical methods
+    \item Interpret the mathematical solution in the physical context
+    \item Validate the model against experimental or observational data
+    \item Refine the model iteratively to improve accuracy
 \end{enumerate}
 
-\subsection{Example: Population Growth Model}
-\label{ssec:example_population_growth}
-\textbf{Problem:} Model the growth of a population over time.
-
-\textbf{Assumptions:}
+\textbf{Case Study: Population Dynamics Model}
 \begin{itemize}
-    \item The birth rate is proportional to the current population.
-    \item There are no deaths, immigration, or emigration (closed system).
-    \item Resources are unlimited.
+    \item Problem Statement: Develop a mathematical model describing temporal population variations.
+    \item Fundamental Assumptions:
+    \begin{itemize}
+        \item Birth rate exhibits proportionality to current population size
+        \item Negligible mortality, immigration, and emigration effects
+        \item Unlimited environmental resources and carrying capacity
+    \end{itemize}
+    \item Mathematical Formulation:
+    \begin{equation*}
+        \frac{dP}{dt} = rP
+    \end{equation*}
+    where $P(t)$ represents population at time $t$ and $r$ denotes the intrinsic growth rate parameter.
 \end{itemize}
 
-\textbf{Mathematical Model:}
-Let $P(t)$ be the population at time $t$, and $r$ be the constant growth rate.
-The rate of change of the population, $\frac{dP}{dt}$, is proportional to $P(t)$:
-\begin{equation}
-    \frac{dP}{dt} = rP \label{eq:population_growth}
-\end{equation}
-This is a first-order, linear, ordinary differential equation with constant coefficients.
-
+% =========================================================================
+% PART II: FIRST-ORDER EQUATION SOLUTION TECHNIQUES (Sessions 2-4)
+% =========================================================================
 \chapter{Linear Equations with Variable Coefficients and Separable Equations}
 \label{chap:session_2}
 
 This chapter covers the fundamental solution techniques for first-order differential equations.
 
 \section{Linear Equations with Variable Coefficients}
-\label{sec:linear_variable_coeffs}
-
 A \textbf{first-order linear differential equation} can be written in the standard form:
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx} + P(x)y = Q(x)
-    \label{eq:book_linear_de_standard_form}
-\end{equation}
+\end{equation*}
 where $P(x)$ and $Q(x)$ are continuous functions of $x$.
 
 Key characteristics of this type of equation include:
@@ -290,189 +234,123 @@ Key characteristics of this type of equation include:
 \end{itemize}
 
 \section{Method of Solution: Integrating Factor}
-\label{sec:book_integrating_factor}
-To solve the linear differential equation given by Equation~\ref{eq:book_linear_de_standard_form}, we employ the method of the integrating factor.
+To solve the linear differential equation given above, we employ the method of the integrating factor.
 
-\subsubsection{Step 1: Calculate the Integrating Factor}
-The \textbf{integrating factor}, denoted by $\mu(x)$, is defined as:
-\begin{equation}
+\textbf{Step 1: Calculate the Integrating Factor}
+The integrating factor, denoted by $\mu(x)$, is defined as:
+\begin{equation*}
     \mu(x) = e^{\int P(x)dx}
-    \label{eq:book_integrating_factor_formula}
-\end{equation}
-Note that the constant of integration can be omitted when calculating $\mu(x)$, as it would only introduce a multiplicative constant that cancels out later.
+\end{equation*}
 
-\subsubsection{Step 2: Multiply by the Integrating Factor}
-Multiply the entire standard differential equation (Equation~\ref{eq:book_linear_de_standard_form}) by $\mu(x)$:
-\begin{equation}
+\textbf{Step 2: Multiply by the Integrating Factor}
+Multiply the entire standard differential equation by $\mu(x)$:
+\begin{equation*}
     \mu(x)\frac{dy}{dx} + \mu(x)P(x)y = \mu(x)Q(x)
-    \label{eq:book_multiplied_by_mu}
-\end{equation}
-The crucial property of the integrating factor is that the left side of Equation~\ref{eq:book_multiplied_by_mu} becomes the derivative of the product $\mu(x)y$ with respect to $x$:
-\begin{equation}
-    \frac{d}{dx}[\mu(x)y] = \mu(x)P(x)y + \mu(x)\frac{dy}{dx}
-\end{equation}
-Thus, Equation~\ref{eq:book_multiplied_by_mu} can be rewritten as:
-\begin{equation}
+\end{equation*}
+The left side becomes the derivative of the product $\mu(x)y$ with respect to $x$:
+\begin{equation*}
     \frac{d}{dx}[\mu(x)y] = \mu(x)Q(x)
-    \label{eq:book_derivative_product_form}
-\end{equation}
+\end{equation*}
 
-\subsubsection{Step 3: Integrate Both Sides}
-Integrate both sides of Equation~\ref{eq:book_derivative_product_form} with respect to $x$:
-\begin{equation}
-    \int \frac{d}{dx}[\mu(x)y] dx = \int \mu(x)Q(x)dx
-\end{equation}
-This yields:
-\begin{equation}
+\textbf{Step 3: Integrate Both Sides}
+Integrate both sides:
+\begin{equation*}
     \mu(x)y = \int \mu(x)Q(x)dx + C
-    \label{eq:book_integrated_form}
-\end{equation}
+\end{equation*}
 where $C$ is the constant of integration.
 
-\subsubsection{Step 4: Solve for $y(x)$}
-Finally, solve for $y(x)$ by dividing Equation~\ref{eq:book_integrated_form} by $\mu(x)$ (assuming $\mu(x) \neq 0$, which is true since it is an exponential):
-\begin{equation}
+\textbf{Step 4: Solve for $y(x)$}
+\begin{equation*}
     y(x) = \frac{1}{\mu(x)} \left( \int \mu(x)Q(x)dx + C \right)
-    \label{eq:book_linear_de_solution}
-\end{equation}
+\end{equation*}
 This is the general solution to the first-order linear differential equation.
 
-\subsection{Example: Solving a Linear Differential Equation}
-\label{ssec:book_example_linear_de}
+\section{Example: Solving a Linear Differential Equation}
 Consider the differential equation:
-\begin{equation}
+\begin{equation*}
     x\frac{dy}{dx} - 2y = x^2 \quad \text{for } x > 0
-    \label{eq:book_ex_linear_problem}
-\end{equation}
+\end{equation*}
 
 \textbf{1. Standard Form:}
-To put Equation~\ref{eq:book_ex_linear_problem} into the standard form $\frac{dy}{dx} + P(x)y = Q(x)$, we divide by $x$ (which is permissible since $x > 0$):
-\begin{equation}
+Divide by $x$:
+\begin{equation*}
     \frac{dy}{dx} - \frac{2}{x}y = x
-    \label{eq:book_ex_linear_standard}
-\end{equation}
-From this, we identify $P(x) = -\frac{2}{x}$ and $Q(x) = x$.
+\end{equation*}
+$P(x) = -\frac{2}{x}$, $Q(x) = x$.
 
 \textbf{2. Integrating Factor $\mu(x)$:}
-Calculate the integrating factor using Equation~\ref{eq:book_integrating_factor_formula}:
-\begin{equation}
-    \mu(x) = e^{\int -\frac{2}{x}dx}
-\end{equation}
-First, evaluate the integral: $\int -\frac{2}{x}dx = -2\ln|x|$. Since $x > 0$, $|x|=x$, so $-2\ln x = \ln x^{-2}$.
-Therefore, the integrating factor is:
-\begin{equation}
-    \mu(x) = e^{\ln x^{-2}} = x^{-2} = \frac{1}{x^2}
-\end{equation}
+\begin{equation*}
+    \mu(x) = e^{\int -\frac{2}{x}dx} = x^{-2}
+\end{equation*}
 
 \textbf{3. Multiply by $\mu(x)$ and Integrate:}
-Multiply the standard form (Equation~\ref{eq:book_ex_linear_standard}) by $\mu(x) = \frac{1}{x^2}$:
-\begin{equation}
-    \frac{1}{x^2}\left(\frac{dy}{dx} - \frac{2}{x}y\right) = \frac{1}{x^2} \cdot x
-\end{equation}
-This simplifies to:
-\begin{equation}
-    \frac{1}{x^2}\frac{dy}{dx} - \frac{2}{x^3}y = \frac{1}{x}
-\end{equation}
-The left side is $\frac{d}{dx}\left[\frac{1}{x^2}y\right]$. So, we have:
-\begin{equation}
+\begin{equation*}
     \frac{d}{dx}\left[\frac{1}{x^2}y\right] = \frac{1}{x}
-\end{equation}
-Now, integrate both sides with respect to $x$:
-\begin{equation}
-    \frac{1}{x^2}y = \int \frac{1}{x}dx = \ln|x| + C
-\end{equation}
-Since $x > 0$, this becomes:
-\begin{equation}
+\end{equation*}
+Integrate:
+\begin{equation*}
     \frac{1}{x^2}y = \ln x + C
-\end{equation}
+\end{equation*}
 
 \textbf{4. Solve for $y(x)$:}
-Multiply by $x^2$ to isolate $y(x)$:
-\begin{equation}
+\begin{equation*}
     y(x) = x^2(\ln x + C)
-    \label{eq:book_ex_linear_solution}
-\end{equation}
-This is the general solution to the given differential equation for $x > 0$.
+\end{equation*}
 
-\subsection{Separable Equations}
-\label{ssec:separable_equations}
+\section{Separable Equations}
+A first-order differential equation is called \textbf{separable} if it can be written in a form where all terms involving the independent variable $x$ (and $dx$) can be moved to one side, and all terms involving the dependent variable $y$ (and $dy$) to the other.
 
-A first-order differential equation is called \textbf{separable} if it can be written in a form where all terms involving the independent variable $x$ (and $dx$) can be moved to one side of the equation, and all terms involving the dependent variable $y$ (and $dy$) can be moved to the other side.
-
-Standard forms for separable equations are:
-\begin{equation}
+Standard forms:
+\begin{equation*}
     M(x)dx + N(y)dy = 0
-    \label{eq:book_separable_form1}
-\end{equation}
-or, equivalently, if the derivative $\frac{dy}{dx}$ can be expressed as a product of a function of $x$ and a function of $y$:
-\begin{equation}
+\end{equation*}
+or
+\begin{equation*}
     \frac{dy}{dx} = f(x)g(y)
-    \label{eq:book_separable_form2}
-\end{equation}
+\end{equation*}
 
-\subsection{Method of Solution: Separation and Integration}
-\label{ssec:book_separable_solution_method}
-To solve a separable equation of the form given by Equation~\ref{eq:book_separable_form2}:
+\textbf{Method of Solution: Separation and Integration}
 
-\subsubsection{Step 1: Separate Variables}
-Assuming $g(y) \neq 0$, we can algebraically manipulate the equation to group $x$ terms with $dx$ and $y$ terms with $dy$:
-\begin{equation}
+\textbf{Step 1: Separate Variables}
+\begin{equation*}
     \frac{1}{g(y)}dy = f(x)dx
-    \label{eq:book_variables_separated}
-\end{equation}
-If there are values of $y$ for which $g(y)=0$, these may represent constant (equilibrium) solutions that should be checked separately.
+\end{equation*}
 
-\subsubsection{Step 2: Integrate Both Sides}
-Integrate both sides of Equation~\ref{eq:book_variables_separated} with respect to their respective variables:
-\begin{equation}
+\textbf{Step 2: Integrate Both Sides}
+\begin{equation*}
     \int \frac{1}{g(y)}dy = \int f(x)dx + C
-    \label{eq:book_separable_integrated}
-\end{equation}
-where $C$ is the constant of integration. It is customary to add the constant of integration to the side involving the independent variable $x$.
+\end{equation*}
 
-\subsubsection{Step 3: Solve for $y(x)$ (if possible)}
-The result of the integration in Equation~\ref{eq:book_separable_integrated} is often an implicit solution relating $x$ and $y$. If possible and desired, one can attempt to solve this equation explicitly for $y(x)$.
+\textbf{Step 3: Solve for $y(x)$ (if possible)}
+The result is often an implicit solution relating $x$ and $y$. If possible, solve explicitly for $y(x)$.
 
-\subsection{Example: Solving a Separable Differential Equation}
-\label{ssec:book_example_separable_de}
+\section{Example: Solving a Separable Differential Equation}
 Consider the differential equation:
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx} = \frac{x^2}{y^2}
-    \label{eq:book_ex_separable_problem}
-\end{equation}
+\end{equation*}
 
 \textbf{1. Separate Variables:}
-Multiply both sides by $y^2$ and $dx$ to separate the variables (assuming $y \neq 0$):
-\begin{equation}
+\begin{equation*}
     y^2 dy = x^2 dx
-\end{equation}
+\end{equation*}
 
 \textbf{2. Integrate Both Sides:}
-Integrate both sides with respect to their respective variables:
-\begin{equation}
+\begin{equation*}
     \int y^2 dy = \int x^2 dx
-\end{equation}
-Performing the integration yields:
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     \frac{y^3}{3} = \frac{x^3}{3} + C_1
-\end{equation}
-where $C_1$ is the constant of integration.
+\end{equation*}
 
-\textbf{3. Solve for $y(x)$ (optional form):}
-To obtain an explicit solution for $y$, multiply by 3:
-\begin{equation}
-    y^3 = x^3 + 3C_1
-\end{equation}
-Let $C = 3C_1$ (since $C_1$ is an arbitrary constant, $3C_1$ is also an arbitrary constant). Then:
-\begin{equation}
+\textbf{3. Solve for $y(x)$:}
+\begin{equation*}
     y^3 = x^3 + C
-\end{equation}
-Finally, take the cube root of both sides:
-\begin{equation}
+\end{equation*}
+\begin{equation*}
     y(x) = \sqrt[3]{x^3 + C}
-    \label{eq:book_ex_separable_solution}
-\end{equation}
-This is the general solution to the given separable differential equation. Note that $y=0$ was excluded in the separation step; however, $y(x)=0$ is not a solution to the original DE.
+\end{equation*}
+This is the general solution to the given separable differential equation.
 
 \chapter{Modeling with First-Order Equations}
 \label{chap:session_3}
@@ -655,17 +533,17 @@ This is the general solution to the given separable differential equation. Note 
     \item Classification of critical points
 \end{itemize}
 
-\chapter{Non-Linear Stability and Lyapunov Method}
+\chapter{Non-Homogeneous Equations and Variation of Parameters}
 \label{chap:session_15}
 % Session 15 content
 
 \textit{This chapter will cover:}
 \begin{itemize}
-    \item Stability of non-linear systems
-    \item Lyapunov's direct method
-    \item Lyapunov functions and stability criteria
-    \item Periodic solutions
-    \item Poincaré-Bendixon theorem
+    \item Non-homogeneous linear equations
+    \item Method of undetermined coefficients revisited
+    \item Variation of parameters method
+    \item Applications to mechanical systems
+    \item Applications to electrical circuits
 \end{itemize}
 
 \chapter{Phase Portrait Construction and Applications}
