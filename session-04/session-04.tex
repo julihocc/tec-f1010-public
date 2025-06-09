@@ -1,0 +1,152 @@
+% F1010 - Modeling with Differential Equations
+% Session 4: Practice - First-Order Differential Equations
+% Dr. Juliho Castillo
+% Tec de Monterrey
+
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% Use the metropolis theme
+\usetheme{metropolis}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Additional packages
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% Custom commands for academic style
+\newcommand{\concept}[1]{\textbf{#1}}
+\newcommand{\formula}[1]{\textit{#1}}
+\newcommand{\emphasis}[1]{\textit{#1}}
+
+% Title information
+\title{F1010 - Modeling with Differential Equations}
+\subtitle{Session 4: Problem-Solving Workshop \\ First-Order Differential Equations}
+\author{Dr. Juliho Castillo\\\texttt{julihocc@tec.mx}}
+\institute{Tec de Monterrey}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\maketitle
+
+% Table of contents
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%----------------------
+\section{Session Objectives}
+\begin{frame}{Session Objectives}
+    By the end of this workshop, you will be able to:
+    \begin{itemize}
+        \item Apply solution techniques for linear and separable first-order DEs to a variety of problems.
+        \item Develop strategies for setting up mathematical models from problem descriptions.
+        \item Analyze and interpret solutions in the context of given scenarios.
+        \item Enhance problem-solving skills through guided practice and case studies.
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Warm-up: Quick Review Problems}
+\begin{frame}{Warm-up: Linear Equation}
+    \concept{Problem 1:} Solve the initial value problem:
+    \formula{\[ \frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1 \]}
+    \begin{itemize}
+        \item Identify the type of equation.
+        \item Determine the integrating factor.
+        \item Find the general solution.
+        \item Apply the initial condition.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Warm-up: Separable Equation}
+    \concept{Problem 2:} Find the general solution for:
+    \formula{\[ \frac{dy}{dx} = \frac{xy+3x-y-3}{xy-2x+4y-8} \]}
+    \begin{itemize}
+        \item Factor the numerator and denominator to separate variables.
+        \item Integrate both sides.
+        \item Express the solution (implicitly or explicitly).
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Modeling Exercises}
+\begin{frame}{Modeling Exercise 1: Tank Mixing Problem}
+    \concept{Scenario:} A tank initially contains 100L of brine with 10kg of dissolved salt. Brine containing 0.5 kg/L of salt enters the tank at a rate of 4 L/min. The solution is kept thoroughly mixed and drains from the tank at a rate of 4 L/min.
+    \begin{enumerate}
+        \item Set up a differential equation for the amount of salt $A(t)$ in the tank at time $t$.
+        \item Solve the differential equation.
+        \item How much salt is in the tank after 20 minutes?
+        \item What is the long-term concentration of salt in the tank?
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Modeling Exercise 2: Newton's Law of Cooling}
+    \concept{Scenario:} A metal object at $80^\circ C$ is placed in a room where the temperature is $25^\circ C$. After 10 minutes, the object's temperature is $60^\circ C$.
+    \begin{enumerate}
+        \item Formulate the differential equation based on Newton's Law of Cooling.
+        \item Solve the DE to find the temperature $T(t)$ of the object at time $t$.
+        \item What will be the temperature of the object after 30 minutes?
+        \item When will the object reach $30^\circ C$?
+    \end{enumerate}
+\end{frame}
+
+%----------------------
+\section{Case Studies (Group Work)}
+\begin{frame}{Case Study 1: Population Dynamics - Logistic Growth with Harvesting}
+    \concept{Problem:} Consider a fish population $P(t)$ that follows logistic growth with a carrying capacity $K$ and intrinsic growth rate $r$. Suppose fish are harvested at a constant rate $H$.
+    \formula{\[ \frac{dP}{dt} = rP\left(1-\frac{P}{K}\right) - H \]}
+    \begin{itemize}
+        \item Discuss the equilibrium solutions and their stability for different values of $H$.
+        \item What is the maximum sustainable harvest rate?
+        \item Sketch phase lines for different scenarios.
+    \end{itemize}
+    \emphasis{This problem requires qualitative analysis and interpretation.}
+\end{frame}
+
+\begin{frame}{Case Study 2: Chemical Reaction Kinetics}
+    \concept{Problem:} Two chemicals A and B react to form a product C. The rate of formation of C is proportional to the product of the remaining amounts of A and B. Let $x(t)$ be the amount of C formed at time $t$. If initially there are $a_0$ units of A and $b_0$ units of B, and $x$ units of C are formed from $x_A$ units of A and $x_B$ units of B according to stoichiometry.
+    \begin{itemize}
+        \item Set up the differential equation for $x(t)$. (Consider stoichiometry, e.g., $A+B \to C$)
+        \item Solve the differential equation assuming $a_0 \neq b_0$.
+        \item What happens if $a_0 = b_0$?
+        \item Discuss the limiting amount of product C.
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Wrap-up and Next Steps}
+\begin{frame}{Key Learnings from Workshop}
+    \begin{itemize}
+        \item Reinforce understanding of solution methods for first-order DEs.
+        \item Practice translating word problems into mathematical models.
+        \item Importance of identifying assumptions in modeling.
+        \item Gained experience in analyzing and interpreting solutions.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Looking Ahead: Session 5}
+    \textbf{Next Session (Session 5): Second-Order Differential Equations}
+    \begin{itemize}
+        \item Introduction to oscillations.
+        \item Linear differential operators.
+        \item Fundamental solutions of homogeneous equations.
+    \end{itemize}
+    \emphasis{Ensure you are comfortable with first-order DEs before moving on.}
+\end{frame}
+
+\begin{frame}[standout]
+    Questions on today's problems? \\
+    Continue practicing modeling and solving DEs!
+\end{frame}
+
+\end{document}
