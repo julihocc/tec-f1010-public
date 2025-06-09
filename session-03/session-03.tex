@@ -1,0 +1,156 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% Use the metropolis theme
+\usetheme{metropolis}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Additional packages
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% Title information
+\title{F1010 - Modeling with Differential Equations}
+\subtitle{Session 3: Modeling with First-Order Equations and Physical Applications}
+\author{Dr. Juliho Castillo\\julihocc@tec.mx}
+\institute{Tec de Monterrey}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\maketitle
+
+% Table of contents
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+%----------------------
+\section{Session Objectives}
+\begin{frame}{Session Objectives}
+    By the end of this session, you will be able to:
+    \begin{itemize}
+        \item Apply mathematical modeling principles to first-order differential equations.
+        \item Construct and analyze population dynamics models (exponential and logistic growth).
+        \item Model and solve Newton's law of cooling/heating problems.
+        \item Set up and solve mixing problems and compartmental analysis.
+        \item Apply first-order DEs to RC circuit applications.
+        \item Interpret the physical meaning of solutions.
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Introduction to Mathematical Modeling}
+\begin{frame}{What is Mathematical Modeling?}
+    \begin{itemize}
+        \item Mathematical modeling is the process of representing real-world phenomena using mathematical equations and concepts.
+        \item Differential equations are a key tool for describing how quantities change over time in physical, biological, and engineering systems.
+        \item The modeling process involves:
+        \begin{enumerate}
+            \item Identifying variables and parameters
+            \item Making simplifying assumptions
+            \item Formulating the governing equations
+            \item Solving and interpreting the results
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Population Dynamics}
+\begin{frame}{Exponential Growth Model}
+    \textbf{Model:} $\frac{dP}{dt} = rP$
+    \begin{itemize}
+        \item $P(t)$: population at time $t$
+        \item $r$: constant growth rate
+        \item \textbf{Solution:} $P(t) = P_0 e^{rt}$
+        \item \textbf{Assumptions:} Unlimited resources, no deaths, immigration, or emigration
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Logistic Growth Model}
+    \textbf{Model:} $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right)$
+    \begin{itemize}
+        \item $K$: carrying capacity
+        \item \textbf{Solution:} $P(t) = \frac{KP_0 e^{rt}}{K + P_0 (e^{rt} - 1)}$
+        \item \textbf{Assumptions:} Limited resources, population cannot exceed $K$
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Newton's Law of Cooling/Heating}
+\begin{frame}{Newton's Law of Cooling/Heating}
+    \textbf{Model:} $\frac{dT}{dt} = -k(T - T_{env})$
+    \begin{itemize}
+        \item $T(t)$: temperature of the object
+        \item $T_{env}$: ambient temperature
+        \item $k$: positive constant
+        \item \textbf{Solution:} $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Mixing Problems and Compartmental Analysis}
+\begin{frame}{Mixing Problem: Basic Setup}
+    \begin{itemize}
+        \item Consider a tank with volume $V$ containing a solution.
+        \item Inflow: solution with concentration $c_{in}$ enters at rate $r_{in}$.
+        \item Outflow: well-mixed solution leaves at rate $r_{out}$.
+        \item Let $Q(t)$ be the amount of substance at time $t$.
+        \item \textbf{Model:} $\frac{dQ}{dt} = r_{in}c_{in} - r_{out}\frac{Q}{V}$
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{RC Circuit Applications}
+\begin{frame}{RC Circuit: Charging a Capacitor}
+    \begin{itemize}
+        \item Series circuit: resistor $R$, capacitor $C$, voltage source $V_0$.
+        \item \textbf{Model:} $RC\frac{dQ}{dt} + Q = V_0C$
+        \item \textbf{Solution:} $Q(t) = V_0C(1 - e^{-t/RC})$
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Physical Interpretation of Solutions}
+\begin{frame}{Interpreting Solutions}
+    \begin{itemize}
+        \item Solutions to first-order DEs describe how quantities evolve over time.
+        \item The form of the solution reflects the underlying physical process (e.g., exponential growth/decay, approach to equilibrium).
+        \item Always check units and physical plausibility.
+        \item Use initial conditions to determine specific solutions.
+    \end{itemize}
+\end{frame}
+
+%----------------------
+\section{Summary and Next Steps}
+\begin{frame}{Key Takeaways}
+    \begin{itemize}
+        \item Mathematical modeling translates real-world problems into solvable equations.
+        \item First-order DEs are widely used in population dynamics, cooling/heating, mixing, and circuits.
+        \item Understanding assumptions and interpreting solutions is crucial.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Looking Ahead}
+    \textbf{Next Session:} Second-Order Differential Equations and Oscillations
+    \begin{itemize}
+        \item Introduction to oscillatory motion
+        \item Linear differential operators
+        \item Fundamental solutions of homogeneous equations
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+    Questions?\newline
+    Practice modeling and solving real-world problems!
+\end{frame}
+
+\end{document}
