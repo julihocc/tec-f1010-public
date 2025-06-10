@@ -49,3 +49,4 @@ latexmkrc
 _auto/
 _build/
 out/
+.vscode/settings.json
