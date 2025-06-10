@@ -19,7 +19,7 @@
 % Title information
 \title{F1010 - Modeling with Differential Equations}
 \subtitle{Session 3: Modeling with First-Order Equations and Physical Applications}
-\author{Dr. Juliho Castillo\\julihocc@tec.mx}
+\author{Dr. Juliho Castillo\\ \\texttt{julihocc@tec.mx}}
 \institute{Tec de Monterrey}
 \date{\today}
 
@@ -84,6 +84,19 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Example: Logistic Growth}
+    A population of bacteria in a petri dish follows a logistic growth model. Initially, there are 1000 bacteria. The carrying capacity of the dish is estimated to be 50,000 bacteria. After 1 hour, the population has grown to 2000.
+    \begin{itemize}
+        \item \textbf{Problem:} Determine the logistic growth equation $P(t)$ for this population.
+        \item \textbf{Given:} $P_0 = 1000$, $K = 50000$, $P(1) = 2000$.
+        \item \textbf{Recall solution form:} $P(t) = \frac{KP_0 e^{rt}}{K + P_0 (e^{rt} - 1)}$
+        \item We need to find $r$. Substitute $t=1, P(1)=2000$:
+        \item $2000 = \frac{50000 \cdot 1000 e^{r}}{50000 + 1000 (e^{r} - 1)}$
+        \item Solving for $e^r$ gives $e^r \approx 2.085$. So, $r = \ln(2.085) \approx 0.7348$.
+        \item \textbf{Model:} $P(t) = \frac{50000 \cdot 1000 e^{0.7348t}}{50000 + 1000 (e^{0.7348t} - 1)}$
+    \end{itemize}
+\end{frame}
+
 %----------------------
 \section{Newton's Law of Cooling/Heating}
 \begin{frame}{Newton's Law of Cooling/Heating}
@@ -93,6 +106,20 @@
         \item $T_{env}$: ambient temperature
         \item $k$: positive constant
         \item \textbf{Solution:} $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Newton's Law of Cooling}
+    A cup of coffee is initially $90^{\circ}\text{C}$. It is left in a room with an ambient temperature of $20^{\circ}\text{C}$. After 5 minutes, the coffee has cooled to $60^{\circ}\text{C}$.
+    \begin{itemize}
+        \item \textbf{Problem:} Temp. after 10 mins?
+        \item \textbf{Given:} $T_0 = 90^{\circ}\text{C}$, $T_{env} = 20^{\circ}\text{C}$, $T(5) = 60^{\circ}\text{C}$.
+        \item \textbf{Solution form:} $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$
+        \item Substitute: $60 = 20 + (90 - 20)e^{-5k}$
+        \item Solve for $k$: $40 = 70e^{-5k} \implies e^{-5k} = \\frac{4}{7}$
+        \item So, $-5k = \\ln(\\frac{4}{7}) \implies k = -\\frac{1}{5}\\ln(\\frac{4}{7}) \\approx 0.1118$.
+        \item \textbf{Model:} $T(t) = 20 + 70e^{-0.1118t}$.
+        \item \textbf{Temp. at $t=10$ min:} $T(10) = 20 + 70e^{-0.1118 \cdot 10} \approx 20 + 70e^{-1.118} \approx 20 + 70(0.3269) \approx 42.88^{\circ}\text{C}$.
     \end{itemize}
 \end{frame}
 
@@ -108,13 +135,69 @@
     \end{itemize}
 \end{frame}
 
-%----------------------
-\section{RC Circuit Applications}
-\begin{frame}{RC Circuit: Charging a Capacitor}
+%-----------------------------------------------------------------------
+\subsection{Mixing Problems}
+%-----------------------------------------------------------------------
+\begin{frame}{Mixing Problems}
+    \begin{itemize}
+        \item Involve a substance (e.g., salt) dissolving in a fluid (e.g., water) within a container.
+        \item The fluid enters and leaves the container at certain rates.
+        \item The concentration of the substance changes over time.
+        \item \textbf{Goal:} Model the amount of substance in the container at time $t$.
+        \item \textbf{DE Form:} $\\frac{dA}{dt} = (Rate In) - (Rate Out)$
+        \item Rate In = (flow rate of liquid in) $\\times$ (concentration of substance in inflow)
+        \item Rate Out = (flow rate of liquid out) $\\times$ (concentration of substance in outflow)
+        \item Concentration in outflow = $A(t) / V(t)$, where $V(t)$ is the volume of liquid at time $t$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Mixing Problem}
+    A tank initially contains 1000 L of brine with 10 kg of dissolved salt. Pure water enters the tank at a rate of 10 L/min. The solution is kept thoroughly mixed and drains from the tank at the same rate.
+    \begin{itemize}
+        \item \textbf{Problem:} How much salt is in the tank after 20 minutes?
+        \item \textbf{Let $A(t)$ be the amount of salt (kg) at time $t$ (min).}
+        \item $A(0) = 10$ kg.
+        \item Volume $V(t) = 1000$ L (constant, since inflow rate = outflow rate).
+        \item \textbf{Rate In:} (10 L/min) $\\times$ (0 kg/L) = 0 kg/min (pure water).
+        \item \textbf{Rate Out:} (10 L/min) $\\times$ ($A(t)/1000$ kg/L) = $A(t)/100$ kg/min.
+        \item \textbf{DE:} $\\frac{dA}{dt} = 0 - \\frac{A(t)}{100} = -\\frac{A}{100}$.
+        \item This is a separable DE: $\\frac{dA}{A} = -\\frac{1}{100} dt$.
+        \item Integrate: $\\ln|A| = -\\frac{t}{100} + C \implies A(t) = Ke^{-t/100}$.
+        \item Use $A(0)=10$: $10 = Ke^0 \implies K=10$.
+        \item \textbf{Model:} $A(t) = 10e^{-t/100}$.
+        \item \textbf{Salt at $t=20$ min:} $A(20) = 10e^{-20/100} = 10e^{-0.2} \\approx 10(0.8187) \\approx 8.187$ kg.
+    \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------
+\subsection{RC Circuit Applications}
+%-----------------------------------------------------------------------
+\begin{frame}{RC Circuit Applications}
     \begin{itemize}
         \item Series circuit: resistor $R$, capacitor $C$, voltage source $V_0$.
         \item \textbf{Model:} $RC\frac{dQ}{dt} + Q = V_0C$
         \item \textbf{Solution:} $Q(t) = V_0C(1 - e^{-t/RC})$
+    \end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------
+\begin{frame}{Example: RC Circuit}
+    A resistor of $R=5 \\Omega$ and a capacitor of $C=0.02 F$ are connected in series with a battery of $E=100 V$. The initial charge on the capacitor is $Q_0 = 0 C$.
+    \begin{itemize}
+        \item \textbf{Problem:} Find the charge $Q(t)$ on the capacitor at time $t$.
+        \item \textbf{Given:} $R=5 \\Omega$, $C=0.02 F$, $E(t)=100 V$, $Q(0)=0 C$.
+        \item \textbf{DE for RC Circuit:} $R\\frac{dQ}{dt} + \\frac{1}{C}Q = E(t)$.
+        \item Substitute values: $5\\frac{dQ}{dt} + \\frac{1}{0.02}Q = 100 \implies 5\\frac{dQ}{dt} + 50Q = 100$.
+        \item Simplify: $\\frac{dQ}{dt} + 10Q = 20$. This is a linear first-order DE.
+        \item \textbf{Integrating Factor (IF):} $I(t) = e^{\\int 10 dt} = e^{10t}$.
+        \item Multiply by IF: $e^{10t}\\frac{dQ}{dt} + 10e^{10t}Q = 20e^{10t}$.
+        \item The left side is $\\frac{d}{dt}(Qe^{10t})$.
+        \item So, $\\frac{d}{dt}(Qe^{10t}) = 20e^{10t}$.
+        \item Integrate: $Qe^{10t} = \\int 20e^{10t} dt = 20 \\frac{e^{10t}}{10} + K = 2e^{10t} + K$.
+        \item Solve for $Q(t)$: $Q(t) = 2 + Ke^{-10t}$.
+        \item Use $Q(0)=0$: $0 = 2 + Ke^0 \implies K = -2$.
+        \item \textbf{Model:} $Q(t) = 2 - 2e^{-10t}$.
+        \item As $t \\to \\infty$, $Q(t) \\to 2 C$ (steady-state charge).
     \end{itemize}
 \end{frame}
 
