@@ -121,17 +121,42 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Example: Logistic Growth}
-    A population of bacteria in a petri dish follows a logistic growth model. Initially, there are 1000 bacteria. The carrying capacity of the dish is estimated to be 50,000 bacteria. After 1 hour, the population has grown to 2000.
+\begin{frame}{Logistic Growth Model - Problem}
+    \textbf{Scenario:} A population of bacteria in a petri dish follows a logistic growth model.
+    
+    \textbf{Given Information:}
     \begin{itemize}
-        \item \textbf{Problem:} Determine the logistic growth equation $P(t)$ for this population.
-        \item \textbf{Given:} $P_0 = 1000$, $K = 50000$, $P(1) = 2000$.
-        \item \textbf{Recall solution form:} $P(t) = \frac{KP_0 e^{rt}}{K + P_0 (e^{rt} - 1)}$
-        \item We need to find $r$. Substitute $t=1, P(1)=2000$:
-        \item $2000 = \frac{50000 \cdot 1000 e^{r}}{50000 + 1000 (e^{r} - 1)}$
-        \item Solving for $e^r$ gives $e^r \approx 2.085$. So, $r = \ln(2.085) \approx 0.7348$.
-        \item \textbf{Model:} $P(t) = \frac{50000 \cdot 1000 e^{0.7348t}}{50000 + 1000 (e^{0.7348t} - 1)}$
+        \item Initial population: $P_0 = 1000$ bacteria
+        \item Carrying capacity: $K = 50,000$ bacteria
+        \item Population after 1 hour: $P(1) = 2000$ bacteria
     \end{itemize}
+    
+    \textbf{Questions to Answer:}
+    \begin{enumerate}
+        \item Find the growth rate parameter $r$
+        \item Determine the complete logistic growth equation $P(t)$
+        \item What will the population be after 3 hours?
+    \end{enumerate}
+    
+    \textbf{Setup:} We need to apply the logistic growth model $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right)$
+\end{frame}
+
+\begin{frame}{Logistic Growth Model - Solution}
+    \textbf{Model Application:} $P(t) = \frac{KP_0 e^{rt}}{K + P_0 (e^{rt} - 1)}$
+    
+    \textbf{Solution to Question 1 (Find $r$):}
+    \begin{itemize}
+        \item Substitute known values at $t=1$: $2000 = \frac{50000 \cdot 1000 e^{r}}{50000 + 1000 (e^{r} - 1)}$
+        \item Simplifying: $2000 = \frac{50000000 e^{r}}{49000 + 1000 e^{r}}$
+        \item Cross multiply and solve: $e^r \approx 2.085$
+        \item Therefore: $r = \ln(2.085) \approx 0.7348$
+    \end{itemize}
+    
+    \textbf{Solution to Question 2 (Complete equation):}
+    $P(t) = \frac{50000 \cdot 1000 e^{0.7348t}}{50000 + 1000 (e^{0.7348t} - 1)}$
+    
+    \textbf{Solution to Question 3 (Population after 3 hours):}
+    $P(3) = \frac{50000000 e^{2.2044}}{49000 + 1000 e^{2.2044}} \approx 4762$ bacteria
 \end{frame}
 
 %----------------------
@@ -146,18 +171,42 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Example: Newton's Law of Cooling}
-    A cup of coffee is initially $90^{\circ}\text{C}$. It is left in a room with an ambient temperature of $20^{\circ}\text{C}$. After 5 minutes, the coffee has cooled to $60^{\circ}\text{C}$.
+\begin{frame}{Newton's Law of Cooling - Problem}
+    \textbf{Scenario:} A cup of coffee is initially $90^{\circ}\text{C}$ and is left in a room with an ambient temperature of $20^{\circ}\text{C}$.
+    
+    \textbf{Given Information:}
     \begin{itemize}
-        \item \textbf{Problem:} Temp. after 10 mins?
-        \item \textbf{Given:} $T_0 = 90^{\circ}\text{C}$, $T_{env} = 20^{\circ}\text{C}$, $T(5) = 60^{\circ}\text{C}$.
-        \item \textbf{Solution form:} $T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$
-        \item Substitute: $60 = 20 + (90 - 20)e^{-5k}$
-        \item Solve for $k$: $40 = 70e^{-5k} \implies e^{-5k} = \frac{4}{7}$
-        \item So, $-5k = \ln\left(\frac{4}{7}\right) \implies k = -\frac{1}{5}\ln\left(\frac{4}{7}\right) \approx 0.1118$.
-        \item \textbf{Model:} $T(t) = 20 + 70e^{-0.1118t}$.
-        \item \textbf{Temp. at $t=10$ min:} $T(10) = 20 + 70e^{-0.1118 \cdot 10} \approx 20 + 70e^{-1.118} \approx 20 + 70(0.3269) \approx 42.88^{\circ}\text{C}$.
+        \item Initial temperature: $T_0 = 90^{\circ}\text{C}$
+        \item Ambient temperature: $T_{env} = 20^{\circ}\text{C}$
+        \item Temperature after 5 minutes: $T(5) = 60^{\circ}\text{C}$
     \end{itemize}
+    
+    \textbf{Questions to Answer:}
+    \begin{enumerate}
+        \item Find the cooling constant $k$
+        \item Determine the complete temperature equation $T(t)$
+        \item What will the temperature be after 10 minutes?
+    \end{enumerate}
+    
+    \textbf{Setup:} We need to apply Newton's Law of Cooling $\frac{dT}{dt} = -k(T - T_{env})$
+\end{frame}
+
+\begin{frame}{Newton's Law of Cooling - Solution}
+    \textbf{Model Application:} $T(t) = T_{env} + (T_0 - T_{env})e^{-kt} = 20 + 70e^{-kt}$
+    
+    \textbf{Solution to Question 1 (Find $k$):}
+    \begin{itemize}
+        \item Substitute known values at $t=5$: $60 = 20 + 70e^{-5k}$
+        \item Simplifying: $40 = 70e^{-5k}$
+        \item Solve: $e^{-5k} = \frac{4}{7}$
+        \item Therefore: $k = -\frac{1}{5}\ln\left(\frac{4}{7}\right) \approx 0.1118$
+    \end{itemize}
+    
+    \textbf{Solution to Question 2 (Complete equation):}
+    $T(t) = 20 + 70e^{-0.1118t}$
+    
+    \textbf{Solution to Question 3 (Temperature after 10 minutes):}
+    $T(10) = 20 + 70e^{-0.1118 \cdot 10} = 20 + 70e^{-1.118} \approx 20 + 70(0.3269) \approx 42.88^{\circ}\text{C}$
 \end{frame}
 
 %----------------------
