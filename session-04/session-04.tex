@@ -29,7 +29,7 @@
 % Title information
 \title{F1010 - Modeling with Differential Equations}
 \subtitle{Session 4: Problem-Solving Workshop \\ First-Order Differential Equations}
-\author{Dr. Juliho Castillo\\\texttt{julihocc@tec.mx}}
+\author{Dr. Juliho Castillo \\ \texttt{julihocc@tec.mx}}
 \institute{Tec de Monterrey}
 \date{\today}
 
@@ -93,45 +93,44 @@
 \begin{frame}{Modeling Exercise 2: Newton's Law of Cooling}
     \concept{Scenario:} A metal object at $80^\circ C$ is placed in a room where the temperature is $25^\circ C$. After 10 minutes, the object's temperature is $60^\circ C$.
     \begin{enumerate}
-        \item Formulate the differential equation based on Newton's Law of Cooling.
-        \item Solve the DE to find the temperature $T(t)$ of the object at time $t$.
-        \item What will be the temperature of the object after 30 minutes?
-        \item When will the object reach $30^\circ C$?
+        \item Write the differential equation and solve for $T(t)$.
+        \item Find the temperature after 30 minutes.
     \end{enumerate}
 \end{frame}
 
 %----------------------
-\section{Case Studies (Group Work)}
-\begin{frame}{Case Study 1: Population Dynamics - Logistic Growth with Harvesting}
-    \concept{Problem:} Consider a fish population $P(t)$ that follows logistic growth with a carrying capacity $K$ and intrinsic growth rate $r$. Suppose fish are harvested at a constant rate $H$.
-    \formula{\[ \frac{dP}{dt} = rP\left(1-\frac{P}{K}\right) - H \]}
-    \begin{itemize}
-        \item Discuss the equilibrium solutions and their stability for different values of $H$.
-        \item What is the maximum sustainable harvest rate?
-        \item Sketch phase lines for different scenarios.
-    \end{itemize}
-    \emphasis{This problem requires qualitative analysis and interpretation.}
+\section{Additional Practice Problems}
+\begin{frame}{Exercise 3: Growth with Limited Resources}
+    \concept{Problem:} A bacteria population $P(t)$ grows according to:
+    \formula{\[ \frac{dP}{dt} = 0.5P\left(1-\frac{P}{1000}\right) \]}
+    Given $P(0) = 50$:
+    \begin{enumerate}
+        \item Solve the differential equation.
+        \item Find the population after 5 hours.
+        \item What is the carrying capacity?
+    \end{enumerate}
 \end{frame}
 
-\begin{frame}{Case Study 2: Chemical Reaction Kinetics}
-    \concept{Problem:} Two chemicals A and B react to form a product C. The rate of formation of C is proportional to the product of the remaining amounts of A and B. Let $x(t)$ be the amount of C formed at time $t$. If initially there are $a_0$ units of A and $b_0$ units of B, and $x$ units of C are formed from $x_A$ units of A and $x_B$ units of B according to stoichiometry.
-    \begin{itemize}
-        \item Set up the differential equation for $x(t)$. (Consider stoichiometry, e.g., $A+B \to C$)
-        \item Solve the differential equation assuming $a_0 \neq b_0$.
-        \item What happens if $a_0 = b_0$?
-        \item Discuss the limiting amount of product C.
-    \end{itemize}
+\begin{frame}{Exercise 4: Simple Decay Process}
+    \concept{Problem:} A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
+    \begin{enumerate}
+        \item Set up and solve the differential equation.
+        \item Find the half-life of the substance.
+        \item How much remains after 30 years?
+    \end{enumerate}
 \end{frame}
 
 %----------------------
 \section{Wrap-up and Next Steps}
 \begin{frame}{Key Learnings from Workshop}
+    Today we practiced:
     \begin{itemize}
-        \item Reinforce understanding of solution methods for first-order DEs.
-        \item Practice translating word problems into mathematical models.
-        \item Importance of identifying assumptions in modeling.
-        \item Gained experience in analyzing and interpreting solutions.
+        \item Solving linear and separable first-order differential equations
+        \item Setting up mathematical models from practical scenarios
+        \item Applying initial conditions and interpreting solutions
+        \item Working with exponential growth, decay, and logistic models
     \end{itemize}
+    \emphasis{Focus on understanding the connection between problem context and mathematical models.}
 \end{frame}
 
 \begin{frame}{Looking Ahead: Session 5}
