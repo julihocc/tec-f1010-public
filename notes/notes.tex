@@ -211,6 +211,43 @@ Differential equations emerge naturally in the mathematical modeling of physical
     where $P(t)$ represents population at time $t$ and $r$ denotes the intrinsic growth rate parameter.
 \end{itemize}
 
+\section{Enhanced Pedagogical Approach}
+This course employs an improved teaching methodology that emphasizes:
+
+\subsection{Problem-Solution Separation}
+Each complex application is presented using a structured format:
+\begin{itemize}
+    \item \textbf{Problem Statement:} Clear presentation of the scenario and questions
+    \item \textbf{Solution Framework:} Step-by-step analytical approach
+    \item \textbf{Interpretation:} Physical meaning of mathematical results
+\end{itemize}
+
+\subsection{Time-Efficient Assessment Design}
+Practice sessions and assessments are designed for optimal learning within allocated time:
+\begin{itemize}
+    \item Focused problem sets that can be completed in one hour
+    \item Progressive difficulty from basic techniques to applications
+    \item Emphasis on understanding over computational complexity
+\end{itemize}
+
+\subsection{Modular Learning Structure}
+The course is organized into distinct modules with regular assessment:
+\begin{itemize}
+    \item Each module builds systematically on previous concepts
+    \item Regular checkpoints ensure mastery before advancing
+    \item Final integration of all course materials
+\end{itemize}
+
+\subsection{Practical Application Focus}
+Real-world modeling scenarios include:
+\begin{itemize}
+    \item Population dynamics (exponential and logistic growth)
+    \item Temperature transfer (Newton's cooling law)
+    \item Chemical mixing processes
+    \item Electrical circuit analysis
+    \item Radioactive decay processes
+\end{itemize}
+
 % =========================================================================
 % PART II: FIRST-ORDER EQUATION SOLUTION TECHNIQUES (Sessions 2-4)
 % =========================================================================
@@ -354,30 +391,295 @@ This is the general solution to the given separable differential equation.
 
 \chapter{Modeling with First-Order Equations}
 \label{chap:session_3}
-% Session 3 content: Modeling with first-order equations and physical applications
 
-\textit{This chapter will cover:}
-\begin{itemize}
-    \item Mathematical modeling principles applied to first-order DEs
-    \item Population dynamics models (exponential and logistic growth)
-    \item Newton's law of cooling/heating
-    \item Mixing problems and compartmental analysis
-    \item RC circuit applications
-    \item Physical interpretation of solutions
-\end{itemize}
+This chapter covers the application of first-order differential equations to real-world modeling scenarios. We explore various physical, biological, and engineering applications through a systematic problem-solution approach.
+
+\section{Exponential Growth Models}
+
+\subsection{Population Growth Problem}
+\textbf{Problem Statement:}
+A bacteria culture has an initial population of 1000. After 2 hours, the population has grown to 1500. Assuming exponential growth:
+\begin{enumerate}
+    \item Find the growth rate constant.
+    \item Write the population function $P(t)$.
+    \item Predict the population after 5 hours.
+    \item When will the population reach 10,000?
+\end{enumerate}
+
+\textbf{Solution:}
+\textit{Step 1: Set up the differential equation}
+For exponential growth: $\frac{dP}{dt} = kP$, where $k$ is the growth rate constant.
+
+\textit{Step 2: Solve the differential equation}
+This separable equation gives us: $P(t) = P_0 e^{kt}$
+
+\textit{Step 3: Apply initial conditions}
+Given $P(0) = 1000$, so $P_0 = 1000$.
+Given $P(2) = 1500$:
+\begin{align*}
+1500 &= 1000e^{2k} \\
+1.5 &= e^{2k} \\
+k &= \frac{\ln(1.5)}{2} \approx 0.203
+\end{align*}
+
+\textit{Step 4: Complete solutions}
+\begin{enumerate}
+    \item Growth rate: $k \approx 0.203$ hour$^{-1}$
+    \item Population function: $P(t) = 1000e^{0.203t}$
+    \item After 5 hours: $P(5) = 1000e^{0.203 \times 5} \approx 2756$
+    \item Time to reach 10,000: $t = \frac{\ln(10)}{0.203} \approx 11.3$ hours
+\end{enumerate}
+
+\section{Logistic Growth Models}
+
+\subsection{Limited Population Growth Problem}
+\textbf{Problem Statement:}
+A population grows according to the logistic model with carrying capacity $K = 5000$ and growth rate $r = 0.1$. If the initial population is 500:
+\begin{enumerate}
+    \item Write the logistic differential equation.
+    \item Solve for the population function $P(t)$.
+    \item Find the population after 10 years.
+    \item When does the population reach 90\% of carrying capacity?
+\end{enumerate}
+
+\textbf{Solution:}
+\textit{Step 1: Logistic differential equation}
+$\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right) = 0.1P\left(1-\frac{P}{5000}\right)$
+
+\textit{Step 2: Solve using separation of variables}
+The solution to the logistic equation is:
+$$P(t) = \frac{K}{1 + Ae^{-rt}}$$
+where $A = \frac{K-P_0}{P_0}$
+
+\textit{Step 3: Apply initial conditions}
+With $P_0 = 500$, $K = 5000$, $r = 0.1$:
+$$A = \frac{5000-500}{500} = 9$$
+
+Therefore: $P(t) = \frac{5000}{1 + 9e^{-0.1t}}$
+
+\textit{Step 4: Complete solutions}
+\begin{enumerate}
+    \item Logistic DE: $\frac{dP}{dt} = 0.1P\left(1-\frac{P}{5000}\right)$
+    \item Population function: $P(t) = \frac{5000}{1 + 9e^{-0.1t}}$
+    \item After 10 years: $P(10) = \frac{5000}{1 + 9e^{-1}} \approx 1839$
+    \item For 90\% capacity (4500): $t = \frac{\ln(81)}{0.1} \approx 43.9$ years
+\end{enumerate}
+
+\section{Newton's Law of Cooling}
+
+\subsection{Temperature Cooling Problem}
+\textbf{Problem Statement:}
+A cup of coffee at 90°C is placed in a room at 20°C. After 5 minutes, the temperature drops to 70°C. Using Newton's law of cooling:
+\begin{enumerate}
+    \item Find the cooling constant.
+    \item Write the temperature function $T(t)$.
+    \item When will the coffee reach 30°C?
+\end{enumerate}
+
+\textbf{Solution:}
+\textit{Step 1: Newton's law of cooling}
+$\frac{dT}{dt} = -k(T - T_{\text{ambient}})$, where $T_{\text{ambient}} = 20°\text{C}$
+
+\textit{Step 2: Solve the differential equation}
+$\frac{dT}{dt} = -k(T - 20)$
+Solution: $T(t) = 20 + Ce^{-kt}$
+
+\textit{Step 3: Apply initial conditions}
+$T(0) = 90°\text{C}$ $\Rightarrow C = 70$
+$T(5) = 70°\text{C}$ $\Rightarrow 70 = 20 + 70e^{-5k}$
+$50 = 70e^{-5k} \Rightarrow k = \frac{\ln(7/5)}{5} \approx 0.067$
+
+\textit{Step 4: Complete solutions}
+\begin{enumerate}
+    \item Cooling constant: $k \approx 0.067$ min$^{-1}$
+    \item Temperature function: $T(t) = 20 + 70e^{-0.067t}$
+    \item Time to reach 30°C: $t = \frac{\ln(7)}{0.067} \approx 29.0$ minutes
+\end{enumerate}
+
+\section{Mixing Problems}
+
+\subsection{Tank Mixing Problem}
+\textbf{Problem Statement:}
+A tank contains 100L of pure water. Salt water with concentration 0.5 kg/L flows in at 4 L/min. The mixture flows out at the same rate, keeping the volume constant:
+\begin{enumerate}
+    \item Set up the differential equation for salt amount $A(t)$.
+    \item Solve for $A(t)$.
+    \item Find the salt amount after 30 minutes.
+\end{enumerate}
+
+\textbf{Solution:}
+\textit{Step 1: Set up the differential equation}
+Rate of change = Rate in - Rate out
+$\frac{dA}{dt} = (0.5)(4) - \frac{A(t)}{100}(4) = 2 - \frac{A}{25}$
+
+\textit{Step 2: Solve the linear equation}
+$\frac{dA}{dt} + \frac{A}{25} = 2$
+Integrating factor: $\mu = e^{t/25}$
+General solution: $A(t) = 50 + Ce^{-t/25}$
+
+\textit{Step 3: Apply initial condition}
+$A(0) = 0 \Rightarrow C = -50$
+Therefore: $A(t) = 50(1 - e^{-t/25})$
+
+\textit{Step 4: Complete solutions}
+\begin{enumerate}
+    \item Differential equation: $\frac{dA}{dt} = 2 - \frac{A}{25}$
+    \item Salt amount function: $A(t) = 50(1 - e^{-t/25})$
+    \item After 30 minutes: $A(30) = 50(1 - e^{-30/25}) \approx 35.0$ kg
+\end{enumerate}
+
+\section{RC Circuit Applications}
+
+\subsection{RC Circuit Charging Problem}
+\textbf{Problem Statement:}
+An RC circuit has $R = 1000\,\Omega$ and $C = 2 \times 10^{-6}$F. A 12V battery is connected at $t = 0$:
+\begin{enumerate}
+    \item Write the differential equation for voltage $v_C(t)$ across the capacitor.
+    \item Solve for $v_C(t)$.
+    \item Find the time constant and 95\% charge time.
+\end{enumerate}
+
+\textbf{Solution:}
+\textit{Step 1: Kirchhoff's voltage law}
+$V_{battery} = v_R + v_C = RC\frac{dv_C}{dt} + v_C$
+$12 = 1000 \times 2 \times 10^{-6} \times \frac{dv_C}{dt} + v_C$
+$\frac{dv_C}{dt} + 500v_C = 6000$
+
+\textit{Step 2: Solve the linear equation}
+General solution: $v_C(t) = 12 + Ce^{-500t}$
+With $v_C(0) = 0$: $C = -12$
+Therefore: $v_C(t) = 12(1 - e^{-500t})$
+
+\textit{Step 3: Complete solutions}
+\begin{enumerate}
+    \item Differential equation: $\frac{dv_C}{dt} + 500v_C = 6000$
+    \item Voltage function: $v_C(t) = 12(1 - e^{-500t})$
+    \item Time constant: $\tau = RC = 0.002$ s; 95\% charge time: $t_{95\%} = 3\tau \ln(20) \approx 0.018$ s
+\end{enumerate}
 
 \chapter{Problem-Solving Workshop}
 \label{chap:session_4}
-% Session 4 content: Practice problems and case studies
 
-\textit{This chapter will include:}
+This chapter provides a structured practice session focusing on first-order differential equations. The problems are designed to be completed within a one-hour timeframe, emphasizing practical application and solution techniques.
+
+\section{Workshop Objectives}
+By the end of this workshop, students should be able to:
 \begin{itemize}
-    \item Complex modeling exercises
-    \item Case studies involving first-order DEs
-    \item Step-by-step solution techniques
-    \item Model validation and interpretation
-    \item Real-world applications and examples
+    \item Apply solution techniques for linear and separable first-order DEs to a variety of problems
+    \item Develop strategies for setting up mathematical models from problem descriptions
+    \item Analyze and interpret solutions in the context of given scenarios
+    \item Enhance problem-solving skills through guided practice
 \end{itemize}
+
+\section{Warm-up Problems}
+
+\subsection{Problem 1: Linear Equation}
+Solve the initial value problem:
+$$\frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1$$
+
+\textbf{Solution Approach:}
+\begin{itemize}
+    \item Identify as a linear first-order equation
+    \item Find the integrating factor: $\mu(t) = e^{\int 2t dt} = e^{t^2}$
+    \item Apply the integrating factor method
+    \item Use the initial condition to find the particular solution
+\end{itemize}
+
+\subsection{Problem 2: Separable Equation}
+Find the general solution for:
+$$\frac{dy}{dx} = \frac{x}{y}$$
+
+\textbf{Solution Approach:}
+\begin{itemize}
+    \item Separate variables: $y dy = x dx$
+    \item Integrate both sides: $\frac{y^2}{2} = \frac{x^2}{2} + C$
+    \item Express the solution: $y^2 - x^2 = C$ (family of hyperbolas)
+\end{itemize}
+
+\section{Modeling Exercises}
+
+\subsection{Exercise 1: Tank Mixing Problem}
+A tank contains 100L of brine with 10kg of salt. Brine with 0.5 kg/L salt enters at 4 L/min and drains at the same rate.
+\begin{enumerate}
+    \item Set up the differential equation for salt amount $A(t)$
+    \item Solve and find the salt amount after 20 minutes
+\end{enumerate}
+
+\textbf{Key Concepts:}
+\begin{itemize}
+    \item Rate of change = Rate in - Rate out
+    \item Concentration = Amount/Volume
+    \item Linear first-order equation solution
+\end{itemize}
+
+\subsection{Exercise 2: Newton's Law of Cooling}
+A metal object at 80°C is placed in a 25°C room. After 10 minutes, it's 60°C.
+\begin{enumerate}
+    \item Write the differential equation and solve for $T(t)$
+    \item Find the temperature after 30 minutes
+\end{enumerate}
+
+\textbf{Key Concepts:}
+\begin{itemize}
+    \item Newton's cooling law: $\frac{dT}{dt} = -k(T - T_{ambient})$
+    \item Exponential decay toward ambient temperature
+    \item Parameter determination from data
+\end{itemize}
+
+\section{Additional Practice Problems}
+
+\subsection{Exercise 3: Growth with Limited Resources}
+A bacteria population $P(t)$ grows according to:
+$$\frac{dP}{dt} = 0.5P\left(1-\frac{P}{1000}\right)$$
+Given $P(0) = 50$:
+\begin{enumerate}
+    \item Solve the differential equation
+    \item Find the population after 5 hours
+    \item What is the carrying capacity?
+\end{enumerate}
+
+\textbf{Solution Framework:}
+\begin{itemize}
+    \item Recognize as logistic growth model
+    \item Use separation of variables or standard logistic solution
+    \item Interpret parameters: growth rate and carrying capacity
+\end{itemize}
+
+\subsection{Exercise 4: Simple Decay Process}
+A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
+\begin{enumerate}
+    \item Set up and solve the differential equation
+    \item Find the half-life of the substance
+    \item How much remains after 30 years?
+\end{enumerate}
+
+\textbf{Solution Framework:}
+\begin{itemize}
+    \item Exponential decay model: $\frac{dN}{dt} = -\lambda N$
+    \item Determine decay constant from given information
+    \item Calculate half-life: $t_{1/2} = \frac{\ln(2)}{\lambda}$
+\end{itemize}
+
+\section{Key Learnings and Skills Practiced}
+This workshop emphasized:
+\begin{itemize}
+    \item Solving linear and separable first-order differential equations
+    \item Setting up mathematical models from practical scenarios
+    \item Applying initial conditions and interpreting solutions
+    \item Working with exponential growth, decay, and logistic models
+\end{itemize}
+
+\textbf{Focus:} Understanding the connection between problem context and mathematical models.
+
+\section{Problem-Solving Strategy}
+For successful completion of differential equation problems:
+\begin{enumerate}
+    \item \textbf{Identify the type} of differential equation
+    \item \textbf{Choose the appropriate method} (separable, linear, etc.)
+    \item \textbf{Apply the solution technique} systematically
+    \item \textbf{Use initial/boundary conditions} to find particular solutions
+    \item \textbf{Interpret results} in the context of the original problem
+\end{enumerate}
 
 % ============================================================================
 % PART II: MODULE 2 - SECOND-ORDER DIFFERENTIAL EQUATIONS (Sessions 5-7)
@@ -624,24 +926,38 @@ This is the general solution to the given separable differential equation.
 \appendix
 \chapter{Assessment Framework (Conceptual)}
 \label{app:assessment}
-While this book serves as a textual resource, the original course assessment was structured as:
+While this book serves as a textual resource, the updated course assessment framework is structured as:
+
+\section{Comprehensive Assessment Structure}
 \begin{itemize}
-    \item \textbf{50\% Cumulative Theoretical-Practical Midterm Examinations}
+    \item \textbf{90\% Written Assessments at End of Each Module (15\% each)}
     \begin{itemize}
-        \item After modules 2, 4, and 6 (sessions 7, 13, 19)
+        \item Six module assessments administered after modules 1-6
+        \item Emphasizes conceptual understanding and practical application
+        \item Each assessment covers module-specific content and skills
+        \item Designed for completion within allocated session time
     \end{itemize}
 
-    \item \textbf{20\% Activities, Assignments, and Integrating Cases}
+    \item \textbf{10\% Final Comprehensive Assessment}
     \begin{itemize}
-        \item During practice sessions (4, 7, 10, 13, 16, 19)
-    \end{itemize}
-
-    \item \textbf{30\% Final Integrating Examination}
-    \begin{itemize}
-        \item Session 20 (comprehensive assessment)
+        \item Session 20 comprehensive evaluation
+        \item Synthesizes knowledge across all course modules
+        \item Integrates concepts from all six thematic modules
+        \item Tests application of differential equations to complex scenarios
     \end{itemize}
 \end{itemize}
-For self-study, readers are encouraged to work through examples and exercises provided in each chapter.
+
+\section{Assessment Philosophy}
+This updated framework emphasizes:
+\begin{itemize}
+    \item \textbf{Modular Learning:} Regular assessment after each thematic unit
+    \item \textbf{Practical Application:} Focus on problem-solving skills
+    \item \textbf{Conceptual Mastery:} Understanding over memorization
+    \item \textbf{Progressive Difficulty:} Building complexity throughout the course
+    \item \textbf{Time Efficiency:} Assessments designed for one-hour completion
+\end{itemize}
+
+For self-study, readers are encouraged to work through examples and exercises provided in each chapter, paying particular attention to the problem-solving methodologies and modeling techniques presented.
 
 \chapter{Recommended Texts and Further Reading}
 \label{app:texts}
