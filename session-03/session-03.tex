@@ -291,24 +291,48 @@
 \end{frame}
 
 %-----------------------------------------------------------------------
-\begin{frame}{Example: RC Circuit}
-    A resistor of $R=5\,\Omega$ and a capacitor of $C=0.02\,\mathrm{F}$ are connected in series with a battery of $E=100\,\mathrm{V}$. The initial charge on the capacitor is $Q_0 = 0\,\mathrm{C}$.
+\begin{frame}{RC Circuit - Problem}
+    \textbf{Scenario:} A resistor of $R=5\,\Omega$ and a capacitor of $C=0.02\,\mathrm{F}$ are connected in series with a battery of $E=100\,\mathrm{V}$.
+    
+    \textbf{Given Information:}
     \begin{itemize}
-        \item \textbf{Problem:} Find the charge $Q(t)$ on the capacitor at time $t$.
-        \item \textbf{Given:} $R=5\,\Omega$, $C=0.02\,\mathrm{F}$, $E(t)=100\,\mathrm{V}$, $Q(0)=0\,\mathrm{C}$.
-        \item \textbf{DE for RC Circuit:} $R\frac{dQ}{dt} + \frac{1}{C}Q = E(t)$.
-        \item Substitute values: $5\frac{dQ}{dt} + \frac{1}{0.02}Q = 100 \implies 5\frac{dQ}{dt} + 50Q = 100$.
-        \item Simplify: $\frac{dQ}{dt} + 10Q = 20$. This is a linear first-order DE.
-        \item \textbf{Integrating Factor (IF):} $I(t) = e^{\int 10 dt} = e^{10t}$.
-        \item Multiply by IF: $e^{10t}\frac{dQ}{dt} + 10e^{10t}Q = 20e^{10t}$.
-        \item The left side is $\frac{d}{dt}(Qe^{10t})$.
-        \item So, $\frac{d}{dt}(Qe^{10t}) = 20e^{10t}$.
-        \item Integrate: $Qe^{10t} = \int 20e^{10t} dt = 20 \frac{e^{10t}}{10} + K = 2e^{10t} + K$.
-        \item Solve for $Q(t)$: $Q(t) = 2 + Ke^{-10t}$.
-        \item Use $Q(0)=0$: $0 = 2 + K \implies K = -2$.
-        \item \textbf{Model:} $Q(t) = 2 - 2e^{-10t}$.
-        \item As $t \to \infty$, $Q(t) \to 2\,\mathrm{C}$ (steady-state charge).
+        \item Resistance: $R = 5\,\Omega$
+        \item Capacitance: $C = 0.02\,\mathrm{F}$
+        \item Voltage source: $E = 100\,\mathrm{V}$ (constant)
+        \item Initial charge: $Q(0) = 0\,\mathrm{C}$
     \end{itemize}
+    
+    \textbf{Questions to Answer:}
+    \begin{enumerate}
+        \item Set up the differential equation for charge $Q(t)$
+        \item Solve the differential equation using integrating factor method
+        \item Find the steady-state charge as $t \to \infty$
+    \end{enumerate}
+    
+    \textbf{Setup:} Use the RC circuit model $R\frac{dQ}{dt} + \frac{1}{C}Q = E(t)$
+\end{frame}
+
+\begin{frame}{RC Circuit - Solution}
+    \textbf{Solution to Question 1 (Set up DE):}
+    \begin{itemize}
+        \item Substitute values: $5\frac{dQ}{dt} + \frac{1}{0.02}Q = 100$
+        \item Simplify: $5\frac{dQ}{dt} + 50Q = 100$
+        \item Standard form: $\frac{dQ}{dt} + 10Q = 20$
+    \end{itemize}
+    
+    \textbf{Solution to Question 2 (Solve using integrating factor):}
+    \begin{itemize}
+        \item Integrating factor: $I(t) = e^{\int 10 dt} = e^{10t}$
+        \item Multiply DE by IF: $e^{10t}\frac{dQ}{dt} + 10e^{10t}Q = 20e^{10t}$
+        \item Left side becomes: $\frac{d}{dt}(Qe^{10t}) = 20e^{10t}$
+        \item Integrate: $Qe^{10t} = 2e^{10t} + K$
+        \item General solution: $Q(t) = 2 + Ke^{-10t}$
+        \item Using $Q(0) = 0$: $K = -2$
+        \item Model: $Q(t) = 2(1 - e^{-10t})$
+    \end{itemize}
+    
+    \textbf{Solution to Question 3 (Steady-state):}
+    As $t \to \infty$, $Q(t) \to 2\,\mathrm{C}$ (steady-state charge)
 \end{frame}
 
 %----------------------
