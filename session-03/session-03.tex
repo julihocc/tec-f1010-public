@@ -237,22 +237,46 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Example: Mixing Problem}
-    A tank initially contains 1000 L of brine with 10 kg of dissolved salt. Pure water enters the tank at a rate of 10 L/min. The solution is kept thoroughly mixed and drains from the tank at the same rate.
+\begin{frame}{Mixing Problem - Problem}
+    \textbf{Scenario:} A tank initially contains 1000 L of brine with 10 kg of dissolved salt. Pure water enters the tank at a rate of 10 L/min, and the solution drains from the tank at the same rate.
+    
+    \textbf{Given Information:}
     \begin{itemize}
-        \item \textbf{Problem:} How much salt is in the tank after 20 minutes?
-        \item \textbf{Let $A(t)$ be the amount of salt (kg) at time $t$ (min).}
-        \item $A(0) = 10$ kg.
-        \item Volume $V(t) = 1000$ L (constant, since inflow rate = outflow rate).
-        \item \textbf{Rate In:} (10 L/min) $\times$ (0 kg/L) = 0 kg/min (pure water).
-        \item \textbf{Rate Out:} (10 L/min) $\times$ ($A(t)/1000$ kg/L) = $A(t)/100$ kg/min.
-        \item \textbf{DE:} $\frac{dA}{dt} = 0 - \frac{A(t)}{100} = -\frac{A}{100}$.
-        \item This is a separable DE: $\frac{dA}{A} = -\frac{1}{100} dt$.
-        \item Integrate: $\ln|A| = -\frac{t}{100} + C \implies A(t) = Ke^{-t/100}$.
-        \item Use $A(0)=10$: $10 = Ke^0 \implies K=10$.
-        \item \textbf{Model:} $A(t) = 10e^{-t/100}$.
-        \item \textbf{Salt at $t=20$ min:} $A(20) = 10e^{-20/100} = 10e^{-0.2} \approx 10(0.8187) \approx 8.187$ kg.
+        \item Initial volume: $V = 1000$ L (constant since inflow = outflow)
+        \item Initial salt amount: $A(0) = 10$ kg
+        \item Inflow rate: 10 L/min of pure water (0 kg/L concentration)
+        \item Outflow rate: 10 L/min of well-mixed solution
     \end{itemize}
+    
+    \textbf{Questions to Answer:}
+    \begin{enumerate}
+        \item Set up the differential equation for salt amount $A(t)$
+        \item Solve the differential equation
+        \item How much salt is in the tank after 20 minutes?
+    \end{enumerate}
+    
+    \textbf{Setup:} Use the mixing model $\frac{dA}{dt} = (\text{Rate In}) - (\text{Rate Out})$
+\end{frame}
+
+\begin{frame}{Mixing Problem - Solution}
+    \textbf{Solution to Question 1 (Set up DE):}
+    \begin{itemize}
+        \item Rate In: (10 L/min) $\times$ (0 kg/L) = 0 kg/min
+        \item Rate Out: (10 L/min) $\times$ ($A(t)/1000$ kg/L) = $A(t)/100$ kg/min
+        \item DE: $\frac{dA}{dt} = 0 - \frac{A(t)}{100} = -\frac{A}{100}$
+    \end{itemize}
+    
+    \textbf{Solution to Question 2 (Solve DE):}
+    \begin{itemize}
+        \item Separable: $\frac{dA}{A} = -\frac{1}{100} dt$
+        \item Integrate: $\ln|A| = -\frac{t}{100} + C$
+        \item General solution: $A(t) = Ke^{-t/100}$
+        \item Using $A(0) = 10$: $K = 10$
+        \item Model: $A(t) = 10e^{-t/100}$
+    \end{itemize}
+    
+    \textbf{Solution to Question 3 (Salt after 20 minutes):}
+    $A(20) = 10e^{-20/100} = 10e^{-0.2} \approx 10(0.8187) \approx 8.187$ kg
 \end{frame}
 
 %-----------------------------------------------------------------------
