@@ -75,6 +75,27 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Exponential Growth Model - Example}
+    \textbf{Problem:} A bacterial culture starts with 100 bacteria and grows at a rate of 25\% per hour.
+    
+    \vspace{0.3cm}
+    \textbf{Given:}
+    \begin{itemize}
+        \item Initial population: $P_0 = 100$ bacteria
+        \item Growth rate: $r = 0.25$ per hour
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    \textbf{Solution:} $P(t) = 100e^{0.25t}$
+    
+    \vspace{0.3cm}
+    \textbf{Questions:}
+    \begin{itemize}
+        \item Population after 4 hours: $P(4) = 100e^{0.25 \cdot 4} = 100e^1 \approx 272$ bacteria
+        \item Time to reach 1000 bacteria: $1000 = 100e^{0.25t} \Rightarrow t = \frac{\ln(10)}{0.25} \approx 9.2$ hours
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Logistic Growth Model}
     \textbf{Model:} $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right)$
     \begin{itemize}
