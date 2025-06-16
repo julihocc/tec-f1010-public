@@ -26,6 +26,37 @@
 \newcommand{\formula}[1]{\textit{#1}}
 \newcommand{\emphasis}[1]{\textit{#1}}
 
+% Problem environment for structured presentation
+\usepackage{tcolorbox}
+\definecolor{problemBg}{HTML}{f0f8ff}
+\definecolor{problemBorder}{HTML}{4682b4}
+
+\newtcolorbox{problembox}{
+    colback=problemBg,
+    colframe=problemBorder,
+    boxrule=2pt,
+    arc=5pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    fonttitle=\bfseries,
+    title=Problem
+}
+
+\newtcolorbox{solutionbox}{
+    colback=white,
+    colframe=green!50!black,
+    boxrule=2pt,
+    arc=5pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    fonttitle=\bfseries,
+    title=Solution Approach
+}
+
 % Title information
 \title{F1010 - Modeling with Differential Equations}
 \subtitle{Session 4: Problem-Solving Workshop \\ First-Order Differential Equations}
@@ -58,24 +89,35 @@
 %----------------------
 \section{Warm-up: Quick Review Problems}
 \begin{frame}{Warm-up: Linear Equation}
-    \concept{Problem 1:} Solve the initial value problem:
-    \formula{\[ \frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1 \]}
-    \begin{itemize}
-        \item Identify the type of equation.
-        \item Determine the integrating factor.
-        \item Find the general solution.
-        \item Apply the initial condition.
-    \end{itemize}
+    \begin{problembox}
+        \concept{Problem 1:} Solve the initial value problem:
+        \formula{\[ \frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1 \]}
+    \end{problembox}
+    
+    \begin{solutionbox}
+        \begin{itemize}
+            \item Identify the type of equation (linear first-order)
+            \item Determine the integrating factor: $\mu(t) = e^{\int 2t \, dt} = e^{t^2}$
+            \item Find the general solution using the integrating factor
+            \item Apply the initial condition to find the particular solution
+        \end{itemize}
+    \end{solutionbox}
 \end{frame}
 
 \begin{frame}{Warm-up: Separable Equation}
-    \concept{Problem 2:} Find the general solution for:
-    \formula{\[ \frac{dy}{dx} = \frac{xy+3x-y-3}{xy-2x+4y-8} \]}
-    \begin{itemize}
-        \item Factor the numerator and denominator to separate variables.
-        \item Integrate both sides.
-        \item Express the solution (implicitly or explicitly).
-    \end{itemize}
+    \begin{problembox}
+        \concept{Problem 2:} Find the general solution for:
+        \formula{\[ \frac{dy}{dx} = \frac{x}{y} \]}
+    \end{problembox}
+    
+    \begin{solutionbox}
+        \begin{itemize}
+            \item Separate variables: $y \, dy = x \, dx$
+            \item Integrate both sides: $\int y \, dy = \int x \, dx$
+            \item Result: $\frac{y^2}{2} = \frac{x^2}{2} + C$
+            \item Express the solution: $y^2 - x^2 = C$ (family of hyperbolas)
+        \end{itemize}
+    \end{solutionbox}
 \end{frame}
 
 %----------------------
