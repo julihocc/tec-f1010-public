@@ -70,6 +70,9 @@
 
 \begin{document}
 
+% Reset problem counter for this session
+\setcounter{problemcounter}{0}
+
 % Title slide
 \maketitle
 
@@ -97,7 +100,9 @@
         Solve the initial value problem:
         \formula{\[ \frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1 \]}
     \end{problembox}
-    
+\end{frame}
+
+\begin{frame}{Warm-up: Linear Equation - Solution}
     \begin{solutionbox}
         \begin{itemize}
             \item Identify the type of equation (linear first-order)
@@ -113,7 +118,9 @@
         Find the general solution for:
         \formula{\[ \frac{dy}{dx} = \frac{x}{y} \]}
     \end{problembox}
-    
+\end{frame}
+
+\begin{frame}{Warm-up: Separable Equation - Solution}
     \begin{solutionbox}
         \begin{itemize}
             \item Separate variables: $y \, dy = x \, dx$
@@ -138,6 +145,18 @@
     \end{problembox}
 \end{frame}
 
+\begin{frame}{Tank Mixing Problem - Solution Approach}
+    \begin{solutionbox}
+        \textbf{Key Concepts:}
+        \begin{itemize}
+            \item Rate of change = Rate in - Rate out
+            \item Concentration = Amount/Volume  
+            \item Linear first-order equation solution
+            \item Long-term behavior analysis
+        \end{itemize}
+    \end{solutionbox}
+\end{frame}
+
 \begin{frame}{Newton's Law of Cooling}
     \begin{problembox}
         A metal object at $80^\circ C$ is placed in a room where the temperature is $25^\circ C$. After 10 minutes, the object's temperature is $60^\circ C$.
@@ -146,6 +165,18 @@
             \item Find the temperature after 30 minutes.
         \end{enumerate}
     \end{problembox}
+\end{frame}
+
+\begin{frame}{Newton's Law of Cooling - Solution Approach}
+    \begin{solutionbox}
+        \textbf{Key Concepts:}
+        \begin{itemize}
+            \item Newton's cooling law: $\frac{dT}{dt} = -k(T - T_{\text{ambient}})$
+            \item Exponential decay toward ambient temperature
+            \item Parameter determination from data
+            \item Temperature prediction
+        \end{itemize}
+    \end{solutionbox}
 \end{frame}
 
 %----------------------
@@ -163,6 +194,18 @@
     \end{problembox}
 \end{frame}
 
+\begin{frame}{Growth with Limited Resources - Solution Approach}
+    \begin{solutionbox}
+        \textbf{Solution Framework:}
+        \begin{itemize}
+            \item Recognize as logistic growth model
+            \item Use separation of variables or standard logistic solution
+            \item Interpret parameters: growth rate and carrying capacity
+            \item Population behavior analysis
+        \end{itemize}
+    \end{solutionbox}
+\end{frame}
+
 \begin{frame}{Simple Decay Process}
     \begin{problembox}
         A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
@@ -172,6 +215,18 @@
             \item How much remains after 30 years?
         \end{enumerate}
     \end{problembox}
+\end{frame}
+
+\begin{frame}{Simple Decay Process - Solution Approach}
+    \begin{solutionbox}
+        \textbf{Solution Framework:}
+        \begin{itemize}
+            \item Exponential decay model: $\frac{dN}{dt} = -\lambda N$
+            \item Determine decay constant from given information
+            \item Calculate half-life: $t_{1/2} = \frac{\ln(2)}{\lambda}$
+            \item Long-term decay analysis
+        \end{itemize}
+    \end{solutionbox}
 \end{frame}
 
 %----------------------

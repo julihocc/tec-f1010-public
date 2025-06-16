@@ -16,6 +16,28 @@
 \usepackage{booktabs}
 \usepackage{multicol}
 
+% Problem environment for structured presentation
+\usepackage{tcolorbox}
+\definecolor{problemBg}{HTML}{f0f8ff}
+\definecolor{problemBorder}{HTML}{4682b4}
+
+% Counter for problems
+\newcounter{problemcounter}
+
+\newtcolorbox{problembox}{
+    colback=problemBg,
+    colframe=problemBorder,
+    boxrule=2pt,
+    arc=5pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    fonttitle=\bfseries,
+    title=Problem \theproblemcounter,
+    before upper={\stepcounter{problemcounter}}
+}
+
 % Title information
 \title{F1010 - Modeling with Differential Equations}
 \subtitle{Session 3: Modeling with First-Order Equations and Physical Applications}
@@ -24,6 +46,9 @@
 \date{\today}
 
 \begin{document}
+
+% Reset problem counter for this session
+\setcounter{problemcounter}{0}
 
 % Title slide
 \maketitle
@@ -76,21 +101,23 @@
 \end{frame}
 
 \begin{frame}{Exponential Growth Model - Problem}
-    \textbf{Scenario:} A bacterial culture starts with 100 bacteria and grows at a rate of 25\% per hour.
-    
-    \textbf{Given Information:}
-    \begin{itemize}
-        \item Initial population: $P_0 = 100$ bacteria
-        \item Growth rate: $r = 0.25$ per hour
-    \end{itemize}
-    
-    \textbf{Questions to Answer:}
-    \begin{enumerate}
-        \item What is the population after 4 hours?
-        \item How long does it take for the population to reach 1000 bacteria?
-    \end{enumerate}
-    
-    \textbf{Setup:} We need to apply the exponential growth model $\frac{dP}{dt} = rP$
+    \begin{problembox}
+        \textbf{Scenario:} A bacterial culture starts with 100 bacteria and grows at a rate of 25\% per hour.
+        
+        \textbf{Given Information:}
+        \begin{itemize}
+            \item Initial population: $P_0 = 100$ bacteria
+            \item Growth rate: $r = 0.25$ per hour
+        \end{itemize}
+        
+        \textbf{Questions to Answer:}
+        \begin{enumerate}
+            \item What is the population after 4 hours?
+            \item How long does it take for the population to reach 1000 bacteria?
+        \end{enumerate}
+        
+        \textbf{Setup:} We need to apply the exponential growth model $\frac{dP}{dt} = rP$
+    \end{problembox}
 \end{frame}
 
 \begin{frame}{Exponential Growth Model - Solution}
@@ -122,23 +149,25 @@
 \end{frame}
 
 \begin{frame}{Logistic Growth Model - Problem}
-    \textbf{Scenario:} A population of bacteria in a petri dish follows a logistic growth model.
-    
-    \textbf{Given Information:}
-    \begin{itemize}
-        \item Initial population: $P_0 = 1000$ bacteria
-        \item Carrying capacity: $K = 50,000$ bacteria
-        \item Population after 1 hour: $P(1) = 2000$ bacteria
-    \end{itemize}
-    
-    \textbf{Questions to Answer:}
-    \begin{enumerate}
-        \item Find the growth rate parameter $r$
-        \item Determine the complete logistic growth equation $P(t)$
-        \item What will the population be after 3 hours?
-    \end{enumerate}
-    
-    \textbf{Setup:} We need to apply the logistic growth model $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right)$
+    \begin{problembox}
+        \textbf{Scenario:} A population of bacteria in a petri dish follows a logistic growth model.
+        
+        \textbf{Given Information:}
+        \begin{itemize}
+            \item Initial population: $P_0 = 1000$ bacteria
+            \item Carrying capacity: $K = 50,000$ bacteria
+            \item Population after 1 hour: $P(1) = 2000$ bacteria
+        \end{itemize}
+        
+        \textbf{Questions to Answer:}
+        \begin{enumerate}
+            \item Find the growth rate parameter $r$
+            \item Determine the complete logistic growth equation $P(t)$
+            \item What will the population be after 3 hours?
+        \end{enumerate}
+        
+        \textbf{Setup:} We need to apply the logistic growth model $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right)$
+    \end{problembox}
 \end{frame}
 
 \begin{frame}{Logistic Growth Model - Solution}
@@ -172,23 +201,25 @@
 \end{frame}
 
 \begin{frame}{Newton's Law of Cooling - Problem}
-    \textbf{Scenario:} A cup of coffee is initially $90^{\circ}\text{C}$ and is left in a room with an ambient temperature of $20^{\circ}\text{C}$.
-    
-    \textbf{Given Information:}
-    \begin{itemize}
-        \item Initial temperature: $T_0 = 90^{\circ}\text{C}$
-        \item Ambient temperature: $T_{env} = 20^{\circ}\text{C}$
-        \item Temperature after 5 minutes: $T(5) = 60^{\circ}\text{C}$
-    \end{itemize}
-    
-    \textbf{Questions to Answer:}
-    \begin{enumerate}
-        \item Find the cooling constant $k$
-        \item Determine the complete temperature equation $T(t)$
-        \item What will the temperature be after 10 minutes?
-    \end{enumerate}
-    
-    \textbf{Setup:} We need to apply Newton's Law of Cooling $\frac{dT}{dt} = -k(T - T_{env})$
+    \begin{problembox}
+        \textbf{Scenario:} A cup of coffee is initially $90^{\circ}\text{C}$ and is left in a room with an ambient temperature of $20^{\circ}\text{C}$.
+        
+        \textbf{Given Information:}
+        \begin{itemize}
+            \item Initial temperature: $T_0 = 90^{\circ}\text{C}$
+            \item Ambient temperature: $T_{env} = 20^{\circ}\text{C}$
+            \item Temperature after 5 minutes: $T(5) = 60^{\circ}\text{C}$
+        \end{itemize}
+        
+        \textbf{Questions to Answer:}
+        \begin{enumerate}
+            \item Find the cooling constant $k$
+            \item Determine the complete temperature equation $T(t)$
+            \item What will the temperature be after 10 minutes?
+        \end{enumerate}
+        
+        \textbf{Setup:} We need to apply Newton's Law of Cooling $\frac{dT}{dt} = -k(T - T_{env})$
+    \end{problembox}
 \end{frame}
 
 \begin{frame}{Newton's Law of Cooling - Solution}
@@ -238,24 +269,26 @@
 \end{frame}
 
 \begin{frame}{Mixing Problem - Problem}
-    \textbf{Scenario:} A tank initially contains 1000 L of brine with 10 kg of dissolved salt. Pure water enters the tank at a rate of 10 L/min, and the solution drains from the tank at the same rate.
-    
-    \textbf{Given Information:}
-    \begin{itemize}
-        \item Initial volume: $V = 1000$ L (constant since inflow = outflow)
-        \item Initial salt amount: $A(0) = 10$ kg
-        \item Inflow rate: 10 L/min of pure water (0 kg/L concentration)
-        \item Outflow rate: 10 L/min of well-mixed solution
-    \end{itemize}
-    
-    \textbf{Questions to Answer:}
-    \begin{enumerate}
-        \item Set up the differential equation for salt amount $A(t)$
-        \item Solve the differential equation
-        \item How much salt is in the tank after 20 minutes?
-    \end{enumerate}
-    
-    \textbf{Setup:} Use the mixing model $\frac{dA}{dt} = (\text{Rate In}) - (\text{Rate Out})$
+    \begin{problembox}
+        \textbf{Scenario:} A tank initially contains 1000 L of brine with 10 kg of dissolved salt. Pure water enters the tank at a rate of 10 L/min, and the solution drains from the tank at the same rate.
+        
+        \textbf{Given Information:}
+        \begin{itemize}
+            \item Initial volume: $V = 1000$ L (constant since inflow = outflow)
+            \item Initial salt amount: $A(0) = 10$ kg
+            \item Inflow rate: 10 L/min of pure water (0 kg/L concentration)
+            \item Outflow rate: 10 L/min of well-mixed solution
+        \end{itemize}
+        
+        \textbf{Questions to Answer:}
+        \begin{enumerate}
+            \item Set up the differential equation for salt amount $A(t)$
+            \item Solve the differential equation
+            \item How much salt is in the tank after 20 minutes?
+        \end{enumerate}
+        
+        \textbf{Setup:} Use the mixing model $\frac{dA}{dt} = (\text{Rate In}) - (\text{Rate Out})$
+    \end{problembox}
 \end{frame}
 
 \begin{frame}{Mixing Problem - Solution}
@@ -292,24 +325,26 @@
 
 %-----------------------------------------------------------------------
 \begin{frame}{RC Circuit - Problem}
-    \textbf{Scenario:} A resistor of $R=5\,\Omega$ and a capacitor of $C=0.02\,\mathrm{F}$ are connected in series with a battery of $E=100\,\mathrm{V}$.
-    
-    \textbf{Given Information:}
-    \begin{itemize}
-        \item Resistance: $R = 5\,\Omega$
-        \item Capacitance: $C = 0.02\,\mathrm{F}$
-        \item Voltage source: $E = 100\,\mathrm{V}$ (constant)
-        \item Initial charge: $Q(0) = 0\,\mathrm{C}$
-    \end{itemize}
-    
-    \textbf{Questions to Answer:}
-    \begin{enumerate}
-        \item Set up the differential equation for charge $Q(t)$
-        \item Solve the differential equation using integrating factor method
-        \item Find the steady-state charge as $t \to \infty$
-    \end{enumerate}
-    
-    \textbf{Setup:} Use the RC circuit model $R\frac{dQ}{dt} + \frac{1}{C}Q = E(t)$
+    \begin{problembox}
+        \textbf{Scenario:} A resistor of $R=5\,\Omega$ and a capacitor of $C=0.02\,\mathrm{F}$ are connected in series with a battery of $E=100\,\mathrm{V}$.
+        
+        \textbf{Given Information:}
+        \begin{itemize}
+            \item Resistance: $R = 5\,\Omega$
+            \item Capacitance: $C = 0.02\,\mathrm{F}$
+            \item Voltage source: $E = 100\,\mathrm{V}$ (constant)
+            \item Initial charge: $Q(0) = 0\,\mathrm{C}$
+        \end{itemize}
+        
+        \textbf{Questions to Answer:}
+        \begin{enumerate}
+            \item Set up the differential equation for charge $Q(t)$
+            \item Solve the differential equation using integrating factor method
+            \item Find the steady-state charge as $t \to \infty$
+        \end{enumerate}
+        
+        \textbf{Setup:} Use the RC circuit model $R\frac{dQ}{dt} + \frac{1}{C}Q = E(t)$
+    \end{problembox}
 \end{frame}
 
 \begin{frame}{RC Circuit - Solution}

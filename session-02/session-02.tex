@@ -22,6 +22,28 @@
 \usepackage{booktabs}
 \usepackage{multicol}
 
+% Problem environment for structured presentation
+\usepackage{tcolorbox}
+\definecolor{problemBg}{HTML}{f0f8ff}
+\definecolor{problemBorder}{HTML}{4682b4}
+
+% Counter for problems
+\newcounter{problemcounter}
+
+\newtcolorbox{problembox}{
+    colback=problemBg,
+    colframe=problemBorder,
+    boxrule=2pt,
+    arc=5pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    fonttitle=\bfseries,
+    title=Problem \theproblemcounter,
+    before upper={\stepcounter{problemcounter}}
+}
+
 % Title information
 \title{F1010 - Modeling with Differential Equations}
 \subtitle{Session 2: First-Order Differential Equations \\ Linear and Separable Equations}
@@ -30,6 +52,9 @@
 \date{\today}
 
 \begin{document}
+
+% Reset problem counter for this session
+\setcounter{problemcounter}{0}
 
 % Title slide
 \maketitle
@@ -105,7 +130,9 @@
 \end{frame}
 
 \begin{frame}{Example: Linear DE (Problem Statement)}
-    Solve the differential equation: $x\frac{dy}{dx} - 2y = x^2$ for $x > 0$.
+    \begin{problembox}
+        Solve the differential equation: $x\frac{dy}{dx} - 2y = x^2$ for $x > 0$.
+    \end{problembox}
     \vspace{1em}
     We will solve this step-by-step.
 \end{frame}
@@ -189,7 +216,9 @@
 \end{frame}
 
 \begin{frame}{Example: Separable DE -- Problem and Step 1}
-    Solve the differential equation: $\frac{dy}{dx} = \frac{x^2}{y^2}$.
+    \begin{problembox}
+        Solve the differential equation: $\frac{dy}{dx} = \frac{x^2}{y^2}$.
+    \end{problembox}
     \vspace{1em}
     \textbf{Separate Variables}
     $y^2 dy = x^2 dx$.
