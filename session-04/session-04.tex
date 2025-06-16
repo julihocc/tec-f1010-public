@@ -31,6 +31,9 @@
 \definecolor{problemBg}{HTML}{f0f8ff}
 \definecolor{problemBorder}{HTML}{4682b4}
 
+% Counter for problems
+\newcounter{problemcounter}
+
 \newtcolorbox{problembox}{
     colback=problemBg,
     colframe=problemBorder,
@@ -41,7 +44,8 @@
     top=10pt,
     bottom=10pt,
     fonttitle=\bfseries,
-    title=Problem
+    title=Problem \theproblemcounter,
+    before upper={\stepcounter{problemcounter}}
 }
 
 \newtcolorbox{solutionbox}{
@@ -122,44 +126,52 @@
 
 %----------------------
 \section{Modeling Exercises}
-\begin{frame}{Modeling Exercise 1: Tank Mixing Problem}
-    \concept{Scenario:} A tank initially contains 100L of brine with 10kg of dissolved salt. Brine containing 0.5 kg/L of salt enters the tank at a rate of 4 L/min. The solution is kept thoroughly mixed and drains from the tank at a rate of 4 L/min.
-    \begin{enumerate}
-        \item Set up a differential equation for the amount of salt $A(t)$ in the tank at time $t$.
-        \item Solve the differential equation.
-        \item How much salt is in the tank after 20 minutes?
-        \item What is the long-term concentration of salt in the tank?
-    \end{enumerate}
+\begin{frame}{Tank Mixing Problem}
+    \begin{problembox}
+        A tank initially contains 100L of brine with 10kg of dissolved salt. Brine containing 0.5 kg/L of salt enters the tank at a rate of 4 L/min. The solution is kept thoroughly mixed and drains from the tank at a rate of 4 L/min.
+        \begin{enumerate}
+            \item Set up a differential equation for the amount of salt $A(t)$ in the tank at time $t$.
+            \item Solve the differential equation.
+            \item How much salt is in the tank after 20 minutes?
+            \item What is the long-term concentration of salt in the tank?
+        \end{enumerate}
+    \end{problembox}
 \end{frame}
 
-\begin{frame}{Modeling Exercise 2: Newton's Law of Cooling}
-    \concept{Scenario:} A metal object at $80^\circ C$ is placed in a room where the temperature is $25^\circ C$. After 10 minutes, the object's temperature is $60^\circ C$.
-    \begin{enumerate}
-        \item Write the differential equation and solve for $T(t)$.
-        \item Find the temperature after 30 minutes.
-    \end{enumerate}
+\begin{frame}{Newton's Law of Cooling}
+    \begin{problembox}
+        A metal object at $80^\circ C$ is placed in a room where the temperature is $25^\circ C$. After 10 minutes, the object's temperature is $60^\circ C$.
+        \begin{enumerate}
+            \item Write the differential equation and solve for $T(t)$.
+            \item Find the temperature after 30 minutes.
+        \end{enumerate}
+    \end{problembox}
 \end{frame}
 
 %----------------------
 \section{Additional Practice Problems}
-\begin{frame}{Exercise 3: Growth with Limited Resources}
-    \concept{Problem:} A bacteria population $P(t)$ grows according to:
-    \formula{\[ \frac{dP}{dt} = 0.5P\left(1-\frac{P}{1000}\right) \]}
-    Given $P(0) = 50$:
-    \begin{enumerate}
-        \item Solve the differential equation.
-        \item Find the population after 5 hours.
-        \item What is the carrying capacity?
-    \end{enumerate}
+\begin{frame}{Growth with Limited Resources}
+    \begin{problembox}
+        A bacteria population $P(t)$ grows according to:
+        \formula{\[ \frac{dP}{dt} = 0.5P\left(1-\frac{P}{1000}\right) \]}
+        Given $P(0) = 50$:
+        \begin{enumerate}
+            \item Solve the differential equation.
+            \item Find the population after 5 hours.
+            \item What is the carrying capacity?
+        \end{enumerate}
+    \end{problembox}
 \end{frame}
 
-\begin{frame}{Exercise 4: Simple Decay Process}
-    \concept{Problem:} A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
-    \begin{enumerate}
-        \item Set up and solve the differential equation.
-        \item Find the half-life of the substance.
-        \item How much remains after 30 years?
-    \end{enumerate}
+\begin{frame}{Simple Decay Process}
+    \begin{problembox}
+        A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
+        \begin{enumerate}
+            \item Set up and solve the differential equation.
+            \item Find the half-life of the substance.
+            \item How much remains after 30 years?
+        \end{enumerate}
+    \end{problembox}
 \end{frame}
 
 %----------------------
