@@ -626,9 +626,13 @@ By the end of this workshop, students should be able to:
 \section{Warm-up Problems}
 
 \subsection{Problem 1: Linear Equation}
+
+\begin{problem}
 Solve the initial value problem:
 $$\frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1$$
+\end{problem}
 
+\begin{solution}
 \textbf{Solution Approach:}
 \begin{itemize}
     \item Identify as a linear first-order equation
@@ -636,51 +640,69 @@ $$\frac{dy}{dt} + 2ty = 2te^{-t^2}, \quad y(0) = 1$$
     \item Apply the integrating factor method
     \item Use the initial condition to find the particular solution
 \end{itemize}
+\end{solution}
 
 \subsection{Problem 2: Separable Equation}
+
+\begin{problem}
 Find the general solution for:
 $$\frac{dy}{dx} = \frac{x}{y}$$
+\end{problem}
 
+\begin{solution}
 \textbf{Solution Approach:}
 \begin{itemize}
     \item Separate variables: $y dy = x dx$
     \item Integrate both sides: $\frac{y^2}{2} = \frac{x^2}{2} + C$
     \item Express the solution: $y^2 - x^2 = C$ (family of hyperbolas)
 \end{itemize}
+\end{solution}
 
 \section{Modeling Exercises}
 
 \subsection{Exercise 1: Tank Mixing Problem}
+
+\begin{problem}
 A tank contains 100L of brine with 10kg of salt. Brine with 0.5 kg/L salt enters at 4 L/min and drains at the same rate.
 \begin{enumerate}
     \item Set up the differential equation for salt amount $A(t)$
     \item Solve and find the salt amount after 20 minutes
 \end{enumerate}
+\end{problem}
 
+\begin{solution}
 \textbf{Key Concepts:}
 \begin{itemize}
     \item Rate of change = Rate in - Rate out
     \item Concentration = Amount/Volume
     \item Linear first-order equation solution
 \end{itemize}
+\end{solution}
 
 \subsection{Exercise 2: Newton's Law of Cooling}
+
+\begin{problem}
 A metal object at 80°C is placed in a 25°C room. After 10 minutes, it's 60°C.
 \begin{enumerate}
     \item Write the differential equation and solve for $T(t)$
     \item Find the temperature after 30 minutes
 \end{enumerate}
+\end{problem}
 
+\begin{solution}
 \textbf{Key Concepts:}
 \begin{itemize}
     \item Newton's cooling law: $\frac{dT}{dt} = -k(T - T_{ambient})$
     \item Exponential decay toward ambient temperature
     \item Parameter determination from data
 \end{itemize}
+\end{solution}
 
 \section{Additional Practice Problems}
 
 \subsection{Exercise 3: Growth with Limited Resources}
+
+\begin{problem}
 A bacteria population $P(t)$ grows according to:
 $$\frac{dP}{dt} = 0.5P\left(1-\frac{P}{1000}\right)$$
 Given $P(0) = 50$:
@@ -689,28 +711,36 @@ Given $P(0) = 50$:
     \item Find the population after 5 hours
     \item What is the carrying capacity?
 \end{enumerate}
+\end{problem}
 
+\begin{solution}
 \textbf{Solution Framework:}
 \begin{itemize}
     \item Recognize as logistic growth model
     \item Use separation of variables or standard logistic solution
     \item Interpret parameters: growth rate and carrying capacity
 \end{itemize}
+\end{solution}
 
 \subsection{Exercise 4: Simple Decay Process}
+
+\begin{problem}
 A radioactive substance decays at a rate proportional to the amount present. If 20\% decays in 10 years:
 \begin{enumerate}
     \item Set up and solve the differential equation
     \item Find the half-life of the substance
     \item How much remains after 30 years?
 \end{enumerate}
+\end{problem}
 
+\begin{solution}
 \textbf{Solution Framework:}
 \begin{itemize}
     \item Exponential decay model: $\frac{dN}{dt} = -\lambda N$
     \item Determine decay constant from given information
     \item Calculate half-life: $t_{1/2} = \frac{\ln(2)}{\lambda}$
 \end{itemize}
+\end{solution}
 
 \section{Key Learnings and Skills Practiced}
 This workshop emphasized:
