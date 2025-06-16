@@ -30,6 +30,43 @@
 \definecolor{mDarkTeal}{HTML}{23373b}
 \definecolor{mLightBrown}{HTML}{EB811B}
 \definecolor{mLightGreen}{HTML}{14B03D}
+\definecolor{problemBg}{HTML}{f8f9fa}
+\definecolor{problemBorder}{HTML}{dee2e6}
+
+% Custom problem environment
+\usepackage{amsthm}
+
+% Define problem counter
+\newcounter{problemcounter}[chapter]
+\renewcommand{\theproblemcounter}{\thechapter.\arabic{problemcounter}}
+
+% Define problem theorem environment
+\newtheoremstyle{problemstyle}% name
+  {3pt}% space above
+  {3pt}% space below
+  {}% body font
+  {}% indent amount
+  {\bfseries}% theorem head font
+  {.}% punctuation after theorem head
+  {.5em}% space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}% theorem head spec
+
+\theoremstyle{problemstyle}
+\newtheorem{problem}[problemcounter]{Problem}
+
+% Define solution environment
+\newtheoremstyle{solutionstyle}% name
+  {3pt}% space above
+  {3pt}% space below
+  {}% body font
+  {}% indent amount
+  {\bfseries}% theorem head font
+  {.}% punctuation after theorem head
+  {.5em}% space after theorem head
+  {}% theorem head spec
+
+\theoremstyle{solutionstyle}
+\newtheorem*{solution}{Solution}
 
 % Title information
 \title{F1010 - Modeling with Differential Equations}
@@ -397,7 +434,8 @@ This chapter covers the application of first-order differential equations to rea
 \section{Exponential Growth Models}
 
 \subsection{Population Growth Problem}
-\textbf{Problem Statement:}
+
+\begin{problem}
 A bacteria culture has an initial population of 1000. After 2 hours, the population has grown to 1500. Assuming exponential growth:
 \begin{enumerate}
     \item Find the growth rate constant.
@@ -405,8 +443,9 @@ A bacteria culture has an initial population of 1000. After 2 hours, the populat
     \item Predict the population after 5 hours.
     \item When will the population reach 10,000?
 \end{enumerate}
+\end{problem}
 
-\textbf{Solution:}
+\begin{solution}
 \textit{Step 1: Set up the differential equation}
 For exponential growth: $\frac{dP}{dt} = kP$, where $k$ is the growth rate constant.
 
@@ -429,11 +468,13 @@ k &= \frac{\ln(1.5)}{2} \approx 0.203
     \item After 5 hours: $P(5) = 1000e^{0.203 \times 5} \approx 2756$
     \item Time to reach 10,000: $t = \frac{\ln(10)}{0.203} \approx 11.3$ hours
 \end{enumerate}
+\end{solution}
 
 \section{Logistic Growth Models}
 
 \subsection{Limited Population Growth Problem}
-\textbf{Problem Statement:}
+
+\begin{problem}
 A population grows according to the logistic model with carrying capacity $K = 5000$ and growth rate $r = 0.1$. If the initial population is 500:
 \begin{enumerate}
     \item Write the logistic differential equation.
@@ -441,8 +482,9 @@ A population grows according to the logistic model with carrying capacity $K = 5
     \item Find the population after 10 years.
     \item When does the population reach 90\% of carrying capacity?
 \end{enumerate}
+\end{problem}
 
-\textbf{Solution:}
+\begin{solution}
 \textit{Step 1: Logistic differential equation}
 $\frac{dP}{dt} = rP\left(1-\frac{P}{K}\right) = 0.1P\left(1-\frac{P}{5000}\right)$
 
@@ -464,29 +506,32 @@ Therefore: $P(t) = \frac{5000}{1 + 9e^{-0.1t}}$
     \item After 10 years: $P(10) = \frac{5000}{1 + 9e^{-1}} \approx 1839$
     \item For 90\% capacity (4500): $t = \frac{\ln(81)}{0.1} \approx 43.9$ years
 \end{enumerate}
+\end{solution}
 
 \section{Newton's Law of Cooling}
 
 \subsection{Temperature Cooling Problem}
-\textbf{Problem Statement:}
+
+\begin{problem}
 A cup of coffee at 90°C is placed in a room at 20°C. After 5 minutes, the temperature drops to 70°C. Using Newton's law of cooling:
 \begin{enumerate}
     \item Find the cooling constant.
     \item Write the temperature function $T(t)$.
     \item When will the coffee reach 30°C?
 \end{enumerate}
+\end{problem}
 
-\textbf{Solution:}
+\begin{solution}
 \textit{Step 1: Newton's law of cooling}
-$\frac{dT}{dt} = -k(T - T_{\text{ambient}})$, where $T_{\text{ambient}} = 20°\text{C}$
+$\frac{dT}{dt} = -k(T - T_{\text{ambient}})$, where $T_{\text{ambient}} = 20^\circ$C
 
 \textit{Step 2: Solve the differential equation}
 $\frac{dT}{dt} = -k(T - 20)$
 Solution: $T(t) = 20 + Ce^{-kt}$
 
 \textit{Step 3: Apply initial conditions}
-$T(0) = 90°\text{C}$ $\Rightarrow C = 70$
-$T(5) = 70°\text{C}$ $\Rightarrow 70 = 20 + 70e^{-5k}$
+$T(0) = 90^\circ$C $\Rightarrow C = 70$
+$T(5) = 70^\circ$C $\Rightarrow 70 = 20 + 70e^{-5k}$
 $50 = 70e^{-5k} \Rightarrow k = \frac{\ln(7/5)}{5} \approx 0.067$
 
 \textit{Step 4: Complete solutions}
@@ -495,19 +540,22 @@ $50 = 70e^{-5k} \Rightarrow k = \frac{\ln(7/5)}{5} \approx 0.067$
     \item Temperature function: $T(t) = 20 + 70e^{-0.067t}$
     \item Time to reach 30°C: $t = \frac{\ln(7)}{0.067} \approx 29.0$ minutes
 \end{enumerate}
+\end{solution}
 
 \section{Mixing Problems}
 
 \subsection{Tank Mixing Problem}
-\textbf{Problem Statement:}
+
+\begin{problem}
 A tank contains 100L of pure water. Salt water with concentration 0.5 kg/L flows in at 4 L/min. The mixture flows out at the same rate, keeping the volume constant:
 \begin{enumerate}
     \item Set up the differential equation for salt amount $A(t)$.
     \item Solve for $A(t)$.
     \item Find the salt amount after 30 minutes.
 \end{enumerate}
+\end{problem}
 
-\textbf{Solution:}
+\begin{solution}
 \textit{Step 1: Set up the differential equation}
 Rate of change = Rate in - Rate out
 $\frac{dA}{dt} = (0.5)(4) - \frac{A(t)}{100}(4) = 2 - \frac{A}{25}$
@@ -527,19 +575,22 @@ Therefore: $A(t) = 50(1 - e^{-t/25})$
     \item Salt amount function: $A(t) = 50(1 - e^{-t/25})$
     \item After 30 minutes: $A(30) = 50(1 - e^{-30/25}) \approx 35.0$ kg
 \end{enumerate}
+\end{solution}
 
 \section{RC Circuit Applications}
 
 \subsection{RC Circuit Charging Problem}
-\textbf{Problem Statement:}
+
+\begin{problem}
 An RC circuit has $R = 1000\,\Omega$ and $C = 2 \times 10^{-6}$F. A 12V battery is connected at $t = 0$:
 \begin{enumerate}
     \item Write the differential equation for voltage $v_C(t)$ across the capacitor.
     \item Solve for $v_C(t)$.
     \item Find the time constant and 95\% charge time.
 \end{enumerate}
+\end{problem}
 
-\textbf{Solution:}
+\begin{solution}
 \textit{Step 1: Kirchhoff's voltage law}
 $V_{battery} = v_R + v_C = RC\frac{dv_C}{dt} + v_C$
 $12 = 1000 \times 2 \times 10^{-6} \times \frac{dv_C}{dt} + v_C$
@@ -556,6 +607,7 @@ Therefore: $v_C(t) = 12(1 - e^{-500t})$
     \item Voltage function: $v_C(t) = 12(1 - e^{-500t})$
     \item Time constant: $\tau = RC = 0.002$ s; 95\% charge time: $t_{95\%} = 3\tau \ln(20) \approx 0.018$ s
 \end{enumerate}
+\end{solution}
 
 \chapter{Problem-Solving Workshop}
 \label{chap:session_4}
