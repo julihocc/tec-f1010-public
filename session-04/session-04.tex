@@ -44,7 +44,7 @@
     top=10pt,
     bottom=10pt,
     fonttitle=\bfseries,
-    title=Problem \theproblemcounter,
+    title=Problem \number\numexpr\value{problemcounter}+1\relax,
     before upper={\stepcounter{problemcounter}}
 }
 
