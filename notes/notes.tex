@@ -753,15 +753,112 @@ This workshop emphasized:
 
 \textbf{Focus:} Understanding the connection between problem context and mathematical models.
 
-\section{Problem-Solving Strategy}
-For successful completion of differential equation problems:
+\section{Complete Solutions to Section 4 Problems}
+
+This section provides detailed solutions to all problems presented in the Problem-Solving Workshop (Section 4). These step-by-step solutions demonstrate the application of first-order differential equation techniques to practical scenarios.
+
+\subsection{Solution 4.1: Linear Equation (Warm-up Problem)}
+
+\textbf{Problem:} Solve the initial value problem $\frac{dy}{dt} + 2ty = 2te^{-t^2}$, $y(0) = 1$
+
+\textbf{Solution Method:} This is a first-order linear differential equation requiring the integrating factor method.
+
+\textbf{Step-by-Step Solution:}
 \begin{enumerate}
-    \item \textbf{Identify the type} of differential equation
-    \item \textbf{Choose the appropriate method} (separable, linear, etc.)
-    \item \textbf{Apply the solution technique} systematically
-    \item \textbf{Use initial/boundary conditions} to find particular solutions
-    \item \textbf{Interpret results} in the context of the original problem
+    \item \textit{Identify equation type:} Linear first-order with $P(t) = 2t$ and $Q(t) = 2te^{-t^2}$
+    \item \textit{Find integrating factor:} $\mu(t) = e^{\int 2t dt} = e^{t^2}$
+    \item \textit{Apply integrating factor:} $e^{t^2}\frac{dy}{dt} + 2te^{t^2}y = 2t$
+    \item \textit{Recognize derivative:} $\frac{d}{dt}[e^{t^2}y] = 2t$
+    \item \textit{Integrate:} $e^{t^2}y = t^2 + C$
+    \item \textit{General solution:} $y(t) = e^{-t^2}(t^2 + C)$
+    \item \textit{Apply initial condition:} $y(0) = 1 \Rightarrow C = 1$
 \end{enumerate}
+
+\textbf{Final Answer:} $y(t) = e^{-t^2}(t^2 + 1)$
+
+\subsection{Solution 4.2: Separable Equation (Warm-up Problem)}
+
+\textbf{Problem:} Find the general solution for $\frac{dy}{dx} = \frac{x}{y}$
+
+\textbf{Solution Method:} Separation of variables technique.
+
+\textbf{Step-by-Step Solution:}
+\begin{enumerate}
+    \item \textit{Separate variables:} $y \, dy = x \, dx$
+    \item \textit{Integrate both sides:} $\int y \, dy = \int x \, dx$
+    \item \textit{Evaluate integrals:} $\frac{y^2}{2} = \frac{x^2}{2} + C_1$
+    \item \textit{Simplify:} $y^2 - x^2 = C$ (where $C = 2C_1$)
+\end{enumerate}
+
+\textbf{Final Answer:} $y^2 - x^2 = C$ (family of hyperbolas)
+
+\subsection{Solution 4.3: Tank Mixing Problem}
+
+\textbf{Problem:} A 100L tank contains brine with 10kg salt. Fresh brine (0.5 kg/L salt) enters at 4 L/min and drains at the same rate. Find the salt amount after 20 minutes.
+
+\textbf{Solution Method:} Rate balance leading to a linear first-order equation.
+
+\textbf{Step-by-Step Solution:}
+\begin{enumerate}
+    \item \textit{Set up rate equation:} $\frac{dA}{dt} = \text{Rate in} - \text{Rate out}$
+    \item \textit{Rate in:} $(0.5 \text{ kg/L})(4 \text{ L/min}) = 2$ kg/min
+    \item \textit{Rate out:} $\frac{A(t)}{100} \times 4 = \frac{A(t)}{25}$ kg/min
+    \item \textit{Differential equation:} $\frac{dA}{dt} = 2 - \frac{A}{25}$
+    \item \textit{Solve linear equation:} $A(t) = 50 - 40e^{-t/25}$ (using $A(0) = 10$)
+    \item \textit{Evaluate at t = 20:} $A(20) = 50 - 40e^{-0.8} \approx 32.0$ kg
+\end{enumerate}
+
+\textbf{Final Answer:} After 20 minutes, approximately 32.0 kg of salt remains in the tank.
+
+\subsection{Solution 4.4: Newton's Law of Cooling}
+
+\textbf{Problem:} A metal object at 80°C cools in a 25°C room. After 10 minutes, it's 60°C. Find the temperature after 30 minutes.
+
+\textbf{Solution Method:} Exponential decay model with parameter determination.
+
+\textbf{Step-by-Step Solution:}
+\begin{enumerate}
+    \item \textit{Newton's cooling law:} $\frac{dT}{dt} = -k(T - 25)$
+    \item \textit{Solve by separation:} $T(t) = 25 + Ce^{-kt}$
+    \item \textit{Apply T(0) = 80:} $C = 55$, so $T(t) = 25 + 55e^{-kt}$
+    \item \textit{Apply T(10) = 60:} $60 = 25 + 55e^{-10k} \Rightarrow k = \frac{1}{10}\ln\left(\frac{11}{7}\right)$
+    \item \textit{Calculate T(30):} $T(30) = 25 + 55\left(\frac{7}{11}\right)^3 \approx 39.2°$C
+\end{enumerate}
+
+\textbf{Final Answer:} After 30 minutes, the temperature is approximately 39.2°C.
+
+\subsection{Solution 4.5: Logistic Growth Model}
+
+\textbf{Problem:} Bacteria population grows according to $\frac{dP}{dt} = 0.5P(1-\frac{P}{1000})$ with $P(0) = 50$. Find population after 5 hours and the carrying capacity.
+
+\textbf{Solution Method:} Logistic equation solution using separation of variables.
+
+\textbf{Step-by-Step Solution:}
+\begin{enumerate}
+    \item \textit{Recognize logistic form:} Growth rate $r = 0.5$, carrying capacity $K = 1000$
+    \item \textit{Separate variables:} $\frac{dP}{P(1000-P)} = 0.0005 \, dt$
+    \item \textit{Partial fractions:} $\frac{1}{1000}\left(\frac{1}{P} + \frac{1}{1000-P}\right)dP = 0.0005 \, dt$
+    \item \textit{Integrate and solve:} $P(t) = \frac{1000e^{0.5t}}{19 + e^{0.5t}}$ (using initial condition)
+    \item \textit{Evaluate at t = 5:} $P(5) = \frac{1000e^{2.5}}{19 + e^{2.5}} \approx 391$ bacteria
+\end{enumerate}
+
+\textbf{Final Answer:} After 5 hours: 391 bacteria; Carrying capacity: 1000 bacteria.
+
+\subsection{Solution 4.6: Exponential Decay Model}
+
+\textbf{Problem:} A radioactive substance decays proportionally to the amount present. If 20\% decays in 10 years, find the half-life and amount remaining after 30 years.
+
+\textbf{Solution Method:} Exponential decay with parameter determination from given data.
+
+\textbf{Step-by-Step Solution:}
+\begin{enumerate}
+    \item \textit{Decay model:} $\frac{dN}{dt} = -\lambda N \Rightarrow N(t) = N_0 e^{-\lambda t}$
+    \item \textit{Use 20\% decay data:} $N(10) = 0.8N_0 \Rightarrow \lambda = \frac{\ln(1.25)}{10} \approx 0.0223$ year$^{-1}$
+    \item \textit{Calculate half-life:} $t_{1/2} = \frac{\ln(2)}{\lambda} \approx 31.1$ years
+    \item \textit{Amount after 30 years:} $N(30) = N_0 e^{-30 \times 0.0223} \approx 0.512N_0$
+\end{enumerate}
+
+\textbf{Final Answer:} Half-life is 31.1 years; after 30 years, 51.2\% remains.
 
 % ============================================================================
 % PART II: MODULE 2 - SECOND-ORDER DIFFERENTIAL EQUATIONS (Sessions 5-7)
